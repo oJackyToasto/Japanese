@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>五十音图 — Flip Cards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main">
+    <div class="opts">
+      <label><input type="radio" name="mode" value="hiro" checked> 平假名</label>
+      <label><input type="radio" name="mode" value="kata"> 片假名</label>
+      <label><input type="radio" name="mode" value="all"> 随机</label>
+      <label><input type="checkbox" name="voiced" checked> 浊音</label>
+      <label><input type="checkbox" name="yoon" checked> 拗音</label>
+    </div>
+    <div class="shadow">
+      <div class="border">
+        <div class="card" id="card">
+          <span id="text" class="char">あ</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="hint">Tap or Space to flip · N for next card</p>
+      <button type="button" id="next-btn" class="next-btn">Next</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #2d2a2e;
+  font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.main {
+  width: 100%;
+  max-width: 420px;
+}
+
+.shadow {
+  background: #1a181b;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.border {
+  background: #3d3a40;
+  padding: 1px;
+  border-radius: 2px;
+}
+
+.card {
+  background: #faf8f5;
+  padding: 48px 32px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.card:active { opacity: 0.98; }
+
+.char {
+  font-size: 80px;
+  color: #2d2a2e;
+  font-family: "MS Gothic", "Yu Gothic", "Hiragino Kaku Gothic Pro", sans-serif;
+}
+
+.romaji {
+  font-size: 36px;
+  color: #5c5a5e;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hint {
+  margin: 0;
+  font-size: 11px;
+  color: #8a8890;
+}
+
+.opts {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.opts label {
+  color: #8a8890;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.opts input { accent-color: #3d3a40; }
+
+.next-btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #3d3a40;
+  color: #faf8f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.next-btn:active {
+  background: #5c5a5e;
+}
