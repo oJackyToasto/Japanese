@@ -3,7 +3,7 @@
     "words": [
         {
             "word": "中国人",
-            "spelling": "ちゅうこくじん",
+            "spelling": "ちゅうごくじん",
             "pitch": 4,
             "meaning": "中国人"
         },
@@ -117,7 +117,7 @@
         },
         {
             "word": "出迎え",
-            "spelling": "でいうえ",
+            "spelling": "でむかえ",
             "pitch": 3,
             "meaning": "迎接"
         },
@@ -236,7 +236,7 @@
         },
         {
             "word": "中国",
-            "spelling": "ちゅうこく",
+            "spelling": "ちゅうごく",
             "pitch": 1,
             "meaning": "中国"
         },
@@ -248,7 +248,7 @@
         },
         {
             "word": "北京大学",
-            "spelling": "ばいこうだいがく",
+            "spelling": "ぺきんだいがく",
             "pitch": 4,
             "meaning": "北京大学"
         },
@@ -259,19 +259,19 @@
             "meaning": "JC策划公司"
         },
         {
-            "word": "北京旅行者",
-            "spelling": "ぺいきょうりょこくしゃ",
+            "word": "北京旅行社",
+            "spelling": "ぺきんりょこうしゃ",
             "pitch": 5,
             "meaning": "北京旅行社"
         },
         {
             "word": "日中商事",
-            "spelling": "にちちゅうしょうじ",
+            "spelling": "にっちゅうしょうじ",
             "pitch": 5,
             "meaning": "日中商社"
         },
         {
-            "spelling": "こんいちは",
+            "spelling": "こんにちは",
             "pitch": 5,
             "meaning": "你好"
         },
