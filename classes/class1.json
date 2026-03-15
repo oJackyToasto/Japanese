@@ -1,0 +1,320 @@
+{
+    "title": "李さんは中国人です",
+    "words": [
+        {
+            "word": "中国人",
+            "spelling": "ちゅうこくじん",
+            "pitch": 4,
+            "meaning": "中国人"
+        },
+        {
+            "word": "日本人",
+            "spelling": "にほんじん",
+            "pitch": 4,
+            "meaning": "日本人"
+        },
+        {
+            "word": "韓国人",
+            "spelling": "かんこくじん",
+            "pitch": 4,
+            "meaning": "韩国人"
+        },
+        {
+            "word": "アメリカ人",
+            "spelling": "あめりかじん",
+            "pitch": 4,
+            "meaning": "美国人"
+        },
+        {
+            "word": "フランス人",
+            "spelling": "ふらんすじん",
+            "pitch": 4,
+            "meaning": "法国人"
+        },
+        {
+            "word": "学生",
+            "spelling": "がくせい",
+            "pitch": 0,
+            "meaning": "学生"
+        },
+        {
+            "word": "留学生",
+            "spelling": "りゅうがくせい",
+            "pitch": 3,
+            "meaning": "留学生"
+        },
+        {
+            "word": "教授",
+            "spelling": "きょうじゅ",
+            "pitch": 0,
+            "meaning": "教授"
+        },
+        {
+            "word": "社員",
+            "spelling": "しゃいん",
+            "pitch": 1,
+            "meaning": "职员"
+        },
+        {
+            "word": "会社員",
+            "spelling": "かいしゃいん",
+            "pitch": 3,
+            "meaning": "公司职员"
+        },
+        {
+            "word": "店員",
+            "spelling": "てんいん",
+            "pitch": 0,
+            "meaning": "店员"
+        },
+        {
+            "word": "研修生",
+            "spelling": "けんしゅうせい",
+            "pitch": 3,
+            "meaning": "研修生"
+        },
+        {
+            "word": "企業",
+            "spelling": "きぎょう",
+            "pitch": 1,
+            "meaning": "企业"
+        },
+        {
+            "word": "大学",
+            "spelling": "だいがく",
+            "pitch": 0,
+            "meaning": "大学"
+        },
+        {
+            "word": "父親",
+            "spelling": "ちち",
+            "pitch": 1,
+            "meaning": "父亲"
+        },
+        {
+            "word": "課長",
+            "spelling": "かちょう",
+            "pitch": 1,
+            "meaning": "课长"
+        },
+        {
+            "word": "部長",
+            "spelling": "ぶちょう",
+            "pitch": 0,
+            "meaning": "部长"
+        },
+        {
+            "word": "社長",
+            "spelling": "しゃちょう",
+            "pitch": 0,
+            "meaning": "社长"
+        },
+        {
+            "word": "会長",
+            "spelling": "かいちょう",
+            "pitch": 0,
+            "meaning": "会长"
+        },
+        {
+            "word": "出迎え",
+            "spelling": "でいうえ",
+            "pitch": 3,
+            "meaning": "迎接"
+        },
+        {
+            "word": "あの人",
+            "spelling": "あのひと",
+            "pitch": 2,
+            "meaning": "那个人"
+        },
+        {
+            "word": "私",
+            "spelling": "わたし",
+            "pitch": 0,
+            "meaning": "我"
+        },
+        {
+            "spelling": "あなた",
+            "pitch": 2,
+            "meaning": "你"
+        },
+        {
+            "spelling": "どうも",
+            "pitch": 1,
+            "meaning": "很，非常"
+        },
+        {
+            "spelling": "はい",
+            "pitch": 1,
+            "meaning": "是"
+        },
+        {
+            "spelling": "いいえ",
+            "pitch": 1,
+            "meaning": "不是"
+        },
+        {
+            "spelling": "あっ",
+            "meaning": "哎"
+        },
+        {
+            "word": "李",
+            "spelling": "り",
+            "meaning": "李"
+        },
+        {
+            "word": "王",
+            "spelling": "おう",
+            "pitch": 1,
+            "meaning": "王"
+        },
+        {
+            "word": "張",
+            "spelling": "ちょう",
+            "pitch": 1,
+            "meaning": "张"
+        },
+        {
+            "word": "森(姓)",
+            "spelling": "もり",
+            "pitch": 0,
+            "meaning": "森"
+        },
+        {
+            "word": "林(姓)",
+            "spelling": "はやし",
+            "pitch": 0,
+            "meaning": "林"
+        },
+        {
+            "word": "小野",
+            "spelling": "おの",
+            "pitch": 0,
+            "meaning": "小野"
+        },
+        {
+            "word": "吉田",
+            "spelling": "よしだ",
+            "pitch": 0,
+            "meaning": "吉田"
+        },
+        {
+            "word": "中村",
+            "spelling": "なかむら",
+            "pitch": 0,
+            "meaning": "中村"
+        },
+        {
+            "word": "太郎",
+            "spelling": "たろう",
+            "pitch": 1,
+            "meaning": "太郎"
+        },
+        {
+            "word": "金(姓)",
+            "spelling": "きん",
+            "pitch": 1,
+            "meaning": "金"
+        },
+        {
+            "word": "ディポン",
+            "spelling": "でぃぽん",
+            "pitch": 1,
+            "meaning": "迪蓬"
+        },
+        {
+            "word": "スミス",
+            "spelling": "すみす",
+            "pitch": 1,
+            "meaning": "史密斯"
+        },
+        {
+            "word": "ジョンソン",
+            "spelling": "じょんそん",
+            "pitch": 1,
+            "meaning": "约翰森"
+        },
+        {
+            "word": "中国",
+            "spelling": "ちゅうこく",
+            "pitch": 1,
+            "meaning": "中国"
+        },
+        {
+            "word": "東京大学",
+            "spelling": "とうきょうだいがく",
+            "pitch": 5,
+            "meaning": "东京大学"
+        },
+        {
+            "word": "北京大学",
+            "spelling": "ばいこうだいがく",
+            "pitch": 4,
+            "meaning": "北京大学"
+        },
+        {
+            "word": "JC企画",
+            "spelling": "じょんけいきかく",
+            "pitch": 5,
+            "meaning": "JC策划公司"
+        },
+        {
+            "word": "北京旅行者",
+            "spelling": "ぺいきょうりょこくしゃ",
+            "pitch": 5,
+            "meaning": "北京旅行社"
+        },
+        {
+            "word": "日中商事",
+            "spelling": "にちちゅうしょうじ",
+            "pitch": 5,
+            "meaning": "日中商社"
+        },
+        {
+            "spelling": "こんいちは",
+            "pitch": 5,
+            "meaning": "你好"
+        },
+        {
+            "spelling": "すみません",
+            "pitch": 4,
+            "meaning": "对不起"
+        },
+        {
+            "spelling": "どうぞ",
+            "pitch": 1,
+            "meaning": "请"
+        },
+        {
+            "word": "～さん、～君",
+            "spelling": "～さん、～くん",
+            "meaning": "~先生，~小姐"
+        },
+        {
+            "word": "初めまして",
+            "spelling": "はじめまして",
+            "pitch": 4,
+            "meaning": "初次见面"
+        },
+        {
+            "spelling": "こちらこそ",
+            "pitch": 4,
+            "meaning": "我才要..."
+        },
+        {
+            "spelling": "そうです",
+            "pitch": 1,
+            "meaning": "是的"
+        },
+        {
+            "spelling": "ちがいます",
+            "pitch": 4,
+            "meaning": "不是"
+        },
+        {
+            "spelling": "わかりません",
+            "pitch": 5,
+            "meaning": "不知道"
+        }
+    ]
+}

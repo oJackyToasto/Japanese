@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>五十音图 — Flip Cards</title>
+  <title>単語 — Class Flip Cards</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <div class="main">
     <div class="opts">
-      <label><input type="radio" name="mode" value="hiro" checked> 平假名</label>
-      <label><input type="radio" name="mode" value="kata"> 片假名</label>
-      <label><input type="radio" name="mode" value="all"> 随机</label>
-      <label><input type="checkbox" name="voiced" checked> 浊音</label>
-      <label><input type="checkbox" name="yoon" checked> 拗音</label>
+      <label>Class <select id="class-select" aria-label="Select class">
+        <option value="class1">Class 1</option>
+        <option value="class2">Class 2</option>
+        <option value="class3">Class 3</option>
+      </select></label>
+      <span id="class-title" class="class-title"></span>
     </div>
     <div class="shadow">
       <div class="border">
         <div class="card" id="card">
-          <span id="text" class="char">あ</span>
+          <div id="front" class="side front"></div>
+          <div id="back" class="side back"></div>
         </div>
       </div>
     </div>

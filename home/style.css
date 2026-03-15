@@ -1,0 +1,202 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #2d2a2e;
+  font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.main {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Options / controls bar */
+.opts {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.opts label {
+  color: #8a8890;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.opts input { accent-color: #3d3a40; }
+
+.opts select {
+  font-size: 14px;
+  padding: 6px 10px;
+  background: #3d3a40;
+  color: #faf8f5;
+  border: 1px solid #5c5a5e;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.class-title {
+  color: #b0aeb5;
+  font-size: 12px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Card container */
+.shadow {
+  background: #1a181b;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.border {
+  background: #3d3a40;
+  padding: 1px;
+  border-radius: 2px;
+}
+
+.card {
+  background: #faf8f5;
+  padding: 32px 24px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  position: relative;
+}
+
+.card:active { opacity: 0.98; }
+
+/* Char page: single content area */
+.card .char {
+  font-size: 80px;
+  color: #2d2a2e;
+  font-family: "MS Gothic", "Yu Gothic", "Hiragino Kaku Gothic Pro", sans-serif;
+}
+
+.card .romaji {
+  font-size: 36px;
+  color: #5c5a5e;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Junior page: front/back sides */
+.card .side {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 32px 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card .side.back {
+  display: none;
+}
+
+.card.flipped .side.front {
+  display: none;
+}
+
+.card.flipped .side.back {
+  display: flex;
+}
+
+.side.front .main-text {
+  font-size: 42px;
+  color: #2d2a2e;
+  font-family: "MS Gothic", "Yu Gothic", "Hiragino Kaku Gothic Pro", sans-serif;
+}
+
+.side.back .main-text {
+  font-size: 28px;
+  color: #2d2a2e;
+  font-family: "MS Gothic", "Yu Gothic", "Hiragino Kaku Gothic Pro", sans-serif;
+}
+
+.side.back .sub-text {
+  font-size: 22px;
+  color: #5c5a5e;
+  font-family: "MS Gothic", "Yu Gothic", sans-serif;
+}
+
+.side.back .meaning-text {
+  font-size: 18px;
+  color: #3d3a40;
+  margin-top: 4px;
+}
+
+.pitch {
+  font-size: 20px;
+  color: #6a686e;
+  margin-top: 2px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hint {
+  margin: 0;
+  font-size: 11px;
+  color: #8a8890;
+}
+
+.next-btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #3d3a40;
+  color: #faf8f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.next-btn:active {
+  background: #5c5a5e;
+}
+
+.next-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading, .error {
+  color: #8a8890;
+  font-size: 14px;
+  padding: 24px;
+}
+
+.error { color: #c07070; }
