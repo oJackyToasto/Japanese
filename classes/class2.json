@@ -1,0 +1,314 @@
+{
+    "title": "これは　本です",
+    "words": [
+        {
+            "word": "本",
+            "spelling": "ほん",
+            "pitch": 1,
+            "meaning": "书"
+        },
+        {
+            "spelling": "かばん",
+            "pitch": 0,
+            "meaning": "包，公文包"
+        },
+        {
+            "word": "ノート",
+            "spelling": "のーと",
+            "pitch": 1,
+            "meaning": "笔记本"
+        },
+        {
+            "word": "鉛筆",
+            "spelling": "えんぴつ",
+            "pitch": 0,
+            "meaning": "铅笔"
+        },
+        {
+            "word": "傘",
+            "spelling": "かさ",
+            "pitch": 1,
+            "meaning": "伞"
+        },
+        {
+            "word": "靴",
+            "spelling": "くつ",
+            "pitch": 2,
+            "meaning": "鞋"
+        },
+        {
+            "word": "新聞",
+            "spelling": "しんぶん",
+            "pitch": 0,
+            "meaning": "报纸"
+        },
+        {
+            "word": "雑誌",
+            "spelling": "ざっし",
+            "pitch": 0,
+            "meaning": "杂志"
+        },
+        {
+            "word": "辞書",
+            "spelling": "じしょ",
+            "pitch": 0,
+            "meaning": "词典"
+        },
+        {
+            "word": "カメラ",
+            "spelling": "かめら",
+            "pitch": 1,
+            "meaning": "照相机"
+        },
+        {
+            "word": "テレビ",
+            "spelling": "てれび",
+            "pitch": 1,
+            "meaning": "电视"
+        },
+        {
+            "word": "パソコン",
+            "spelling": "ぱそこん",
+            "pitch": 0,
+            "meaning": "个人电脑"
+        },
+        {
+            "word": "ラジオ",
+            "spelling": "らじお",
+            "pitch": 1,
+            "meaning": "收音机"
+        },
+        {
+            "word": "電話",
+            "spelling": "でんわ",
+            "pitch": 0,
+            "meaning": "电话"
+        },
+        {
+            "word": "机",
+            "spelling": "つくえ",
+            "pitch": 0,
+            "meaning": "桌子"
+        },
+        {
+            "word": "椅子",
+            "spelling": "いす",
+            "pitch": 0,
+            "meaning": "椅子"
+        },
+        {
+            "word": "鍵",
+            "spelling": "かぎ",
+            "pitch": 2,
+            "meaning": "钥匙"
+        },
+        {
+            "word": "時計",
+            "spelling": "とけい",
+            "pitch": 0,
+            "meaning": "钟, 表"
+        },
+        {
+            "word": "手帳",
+            "spelling": "てちょう",
+            "pitch": 0,
+            "meaning": "记事本"
+        },
+        {
+            "word": "写真",
+            "spelling": "しゃしん",
+            "pitch": 0,
+            "meaning": "照片"
+        },
+        {
+            "word": "車",
+            "spelling": "くるま",
+            "pitch": 0,
+            "meaning": "车"
+        },
+        {
+            "word": "自転車",
+            "spelling": "じてんしゃ",
+            "pitch": 0,
+            "meaning": "自行车"
+        },
+        {
+            "word": "お土産",
+            "spelling": "おどもり",
+            "pitch": 0,
+            "meaning": "礼物"
+        },
+        {
+            "word": "名産品",
+            "spelling": "めいさんひん",
+            "pitch": 0,
+            "meaning": "特产"
+        },
+        {
+            "word": "シルク",
+            "spelling": "しるく",
+            "pitch": 1,
+            "meaning": "丝绸"
+        },
+        {
+            "word": "ハンカチ",
+            "spelling": "はんかち",
+            "pitch": 1,
+            "meaning": "手帕"
+        },
+        {
+            "word": "会社",
+            "spelling": "かいしゃ",
+            "pitch": 0,
+            "meaning": "公司"
+        },
+        {
+            "word": "方",
+            "spelling": "かた",
+            "pitch": 2,
+            "meaning": "(敬)位，人"
+        },
+        {
+            "word": "人",
+            "spelling": "ひと",
+            "pitch": 0,
+            "meaning": "人"
+        },
+        {
+            "word": "家族",
+            "spelling": "かぞく",
+            "pitch": 1,
+            "meaning": "家族"
+        },
+        {
+            "word": "母",
+            "spelling": "はは",
+            "pitch": 0,
+            "meaning": "母亲"
+        },
+        {
+            "word": "お母さん",
+            "spelling": "おかあさん",
+            "pitch": 2,
+            "meaning": "母亲"
+        },
+        {
+            "word": "日本語",
+            "spelling": "にほんご",
+            "pitch": 0,
+            "meaning": "日语"
+        },
+        {
+            "word": "中国語",
+            "spelling": "ちゅうごくご",
+            "pitch": 0,
+            "meaning": "汉语"
+        },
+        {
+            "spelling": "これ",
+            "pitch": 0,
+            "meaning": "这，这个"
+        },
+        {
+            "spelling": "それ",
+            "pitch": 0,
+            "meaning": "那，那个"
+        },
+        {
+            "spelling": "あれ",
+            "pitch": 0,
+            "meaning": "那，那个"
+        },
+        {
+            "spelling": "どれ",
+            "pitch": 1,
+            "meaning": "哪个"
+        },
+        {
+            "word": "何",
+            "spelling": "なん",
+            "pitch": 1,
+            "meaning": "什么"
+        },
+        {
+            "word": "誰",
+            "spelling": "だれ",
+            "pitch": 1,
+            "meaning": "谁"
+        },
+        {
+            "spelling": "どなた",
+            "pitch": 1,
+            "meaning": "哪位"
+        },
+        {
+            "spelling": "この",
+            "pitch": 0,
+            "meaning": "这个（连体）"
+        },
+        {
+            "spelling": "その",
+            "pitch": 0,
+            "meaning": "那个（连体）"
+        },
+        {
+            "spelling": "あの",
+            "pitch": 0,
+            "meaning": "那个（连体）"
+        },
+        {
+            "spelling": "どの",
+            "pitch": 1,
+            "meaning": "哪个"
+        },
+        {
+            "spelling": "えっ",
+            "meaning": "嗯，哎，唉"
+        },
+        {
+            "spelling": "わあ",
+            "pitch": 1,
+            "meaning": "哇"
+        },
+        {
+            "spelling": "ええ",
+            "pitch": 1,
+            "meaning": "是（应答）"
+        },
+        {
+            "word": "長島",
+            "spelling": "ながしま",
+            "pitch": 0,
+            "meaning": "长岛"
+        },
+        {
+            "word": "日本",
+            "spelling": "にほん",
+            "pitch": 2,
+            "meaning": "日本"
+        },
+        {
+            "word": "スワトウ",
+            "spelling": "すわとう",
+            "pitch": 2,
+            "meaning": "汕头"
+        },
+        {
+            "word": "ロンドン",
+            "spelling": "ろんどん",
+            "pitch": 1,
+            "meaning": "伦敦"
+        },
+        {
+            "spelling": "おいくつ",
+            "pitch": 0,
+            "meaning": "几岁"
+        },
+        {
+            "word": "何歳",
+            "spelling": "なんさい、～さい",
+            "pitch": 0,
+            "meaning": "多大，~岁"
+        }
+    ]
+}
