@@ -1,0 +1,248 @@
+{
+    "title": "ここは　デパートです",
+    "words": [
+        {
+            "word": "デパート",
+            "spelling": "でぱーと",
+            "pitch": 2,
+            "meaning": "百货商店"
+        },
+        {
+            "word": "食堂",
+            "spelling": "しょくどう",
+            "pitch": 0,
+            "meaning": "食堂"
+        },
+        {
+            "word": "郵便局",
+            "spelling": "ゆうびんきょく",
+            "pitch": 3,
+            "meaning": "邮局"
+        },
+        {
+            "word": "銀行",
+            "spelling": "ぎんこう",
+            "pitch": 0,
+            "meaning": "银行"
+        },
+        {
+            "word": "図書館",
+            "spelling": "としょかん",
+            "pitch": 2,
+            "meaning": "图书馆"
+        },
+        {
+            "word": "マンション",
+            "spelling": "まんしょん",
+            "pitch": 1,
+            "meaning": "（高级）公寓"
+        },
+        {
+            "word": "ホテル",
+            "spelling": "ほてる",
+            "pitch": 1,
+            "meaning": "宾馆"
+        },
+        {
+            "word": "コンビニ",
+            "spelling": "こんびに",
+            "pitch": 0,
+            "meaning": "便利店"
+        },
+        {
+            "word": "喫茶店",
+            "spelling": "きっさてん",
+            "pitch": 0,
+            "meaning": "咖啡店"
+        },
+        {
+            "word": "病院",
+            "spelling": "びょういん",
+            "pitch": 0,
+            "meaning": "医院"
+        },
+        {
+            "word": "本屋",
+            "spelling": "ほんや",
+            "pitch": 1,
+            "meaning": "书店"
+        },
+        {
+            "word": "レストラン",
+            "spelling": "れすとらん",
+            "pitch": 1,
+            "meaning": "餐馆，西餐厅"
+        },
+        {
+            "word": "ビル",
+            "spelling": "びる",
+            "pitch": 1,
+            "meaning": "大楼，大厦"
+        },
+        {
+            "word": "建物",
+            "spelling": "たてもの",
+            "pitch": 2,
+            "meaning": "大楼，建筑物"
+        },
+        {
+            "word": "売り場",
+            "spelling": "うりば",
+            "pitch": 0,
+            "meaning": "柜台，出售处"
+        },
+        {
+            "word": "トイレ",
+            "spelling": "といれ",
+            "pitch": 1,
+            "meaning": "厕所"
+        },
+        {
+            "word": "入り口",
+            "spelling": "いりぐち",
+            "pitch": 0,
+            "meaning": "入口"
+        },
+        {
+            "word": "事務所",
+            "spelling": "じむしょ",
+            "pitch": 2,
+            "meaning": "事务所"
+        },
+        {
+            "word": "受付",
+            "spelling": "うけつけ",
+            "pitch": 0,
+            "meaning": "接待处"
+        },
+        {
+            "word": "バーゲン会場",
+            "spelling": "ばっげんかいじょう",
+            "pitch": 5,
+            "meaning": "降价大卖场"
+        },
+        {
+            "word": "エスカレーター",
+            "spelling": "えすかれーたー",
+            "pitch": 4,
+            "meaning": "自动扶梯"
+        },
+        {
+            "word": "服",
+            "spelling": "ふく",
+            "pitch": 2,
+            "meaning": "衣服"
+        },
+        {
+            "word": "コート",
+            "spelling": "こーと",
+            "pitch": 1,
+            "meaning": "外套"
+        },
+        {
+            "word": "デジカメ",
+            "spelling": "でじかめ",
+            "pitch": 0,
+            "meaning": "数码相机"
+        },
+        {
+            "word": "国",
+            "spelling": "こく",
+            "pitch": 0,
+            "meaning": "国家"
+        },
+        {
+            "word": "地図",
+            "spelling": "ちず",
+            "pitch": 0,
+            "meaning": "地图"
+        },
+        {
+            "word": "隣",
+            "spelling": "となり",
+            "pitch": 0,
+            "meaning": "旁边"
+        },
+        {
+            "word": "周辺",
+            "spelling": "しゅうへん",
+            "pitch": 0,
+            "meaning": "附近，周边"
+        },
+        {
+            "word": "今日",
+            "spelling": "きょう",
+            "pitch": 1,
+            "meaning": "今天"
+        },
+        {
+            "word": "水曜日",
+            "spelling": "すいようび",
+            "pitch": 3,
+            "meaning": "星期三"
+        },
+        {
+            "word": "木曜日",
+            "spelling": "もくようび",
+            "pitch": 3,
+            "meaning": "星期四"
+        },
+        {
+            "spelling": "ここ",
+            "pitch": 0,
+            "meaning": "这里"
+        },
+        {
+            "spelling": "そこ",
+            "pitch": 0,
+            "meaning": "那里"
+        },
+        {
+            "spelling": "あそこ",
+            "pitch": 0,
+            "meaning": "那边"
+        },
+        {
+            "spelling": "こちら",
+            "pitch": 0,
+            "meaning": "这边"
+        },
+        {
+            "spelling": "そちら",
+            "pitch": 0,
+            "meaning": "那边"
+        },
+        {
+            "spelling": "あちら",
+            "pitch": 0,
+            "meaning": "那边"
+        },
+        {
+            "spelling": "どこ",
+            "pitch": 1,
+            "meaning": "哪里"
+        },
+        {
+            "spelling": "どちら",
+            "pitch": 1,
+            "meaning": "哪边"
+        },
+        {
+            "spelling": "あのう",
+            "pitch": 0,
+            "meaning": "请问"
+        },
+        {
+            "word": "上海",
+            "spelling": "しゃんはい",
+            "pitch": 1,
+            "meaning": "上海"
+        },
+        {
+            "word": "東京",
+            "spelling": "とうきん",
+            "pitch": 0,
+            "meaning": "东京"
+        }
+    ]
+}
