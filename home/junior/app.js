@@ -12,6 +12,7 @@
   const frontEl = document.getElementById("front");
   const backEl = document.getElementById("back");
   const nextBtn = document.getElementById("next-btn");
+  const wordOnlyCheckbox = document.getElementById("word-only");
 
   let deck = [];
   let deckIndex = 0;
@@ -32,7 +33,9 @@
     return a;
   }
 
-  function buildDeck(words) {
+  function buildDeck(words, opts) {
+    opts = opts || {};
+    const wordOnly = !!opts.wordOnly;
     const cards = [];
     for (const w of words) {
       const word = w.word || "";
@@ -50,14 +53,16 @@
           backMeaning: meaning,
           backPitch: pitchChar,
         });
-        cards.push({
-          frontMain: spelling,
-          frontPitch: pitchChar,
-          backMain: word,
-          backSub: null,
-          backMeaning: meaning,
-          backPitch: pitchChar,
-        });
+        if (!wordOnly) {
+          cards.push({
+            frontMain: spelling,
+            frontPitch: pitchChar,
+            backMain: word,
+            backSub: null,
+            backMeaning: meaning,
+            backPitch: pitchChar,
+          });
+        }
       } else {
         const main = word || spelling;
         cards.push({
@@ -71,6 +76,23 @@
       }
     }
     return shuffleArray(cards);
+  }
+
+  function rebuildDeckFromCurrentClass() {
+    if (!currentClassData) return;
+    deck = buildDeck(currentClassData.words || [], {
+      wordOnly: wordOnlyCheckbox.checked,
+    });
+    deckIndex = 0;
+    showingFront = true;
+    cardEl.classList.remove("flipped");
+    nextBtn.disabled = deck.length === 0;
+    if (deck.length) {
+      updateDisplay();
+    } else {
+      frontEl.innerHTML = '<div class="loading">No words in this class.</div>';
+      backEl.innerHTML = "";
+    }
   }
 
   function setCardContent(card) {
@@ -150,7 +172,9 @@
       .then(function (data) {
         currentClassData = data;
         classTitleEl.textContent = data.title || "";
-        deck = buildDeck(data.words || []);
+        deck = buildDeck(data.words || [], {
+          wordOnly: wordOnlyCheckbox.checked,
+        });
         deckIndex = 0;
         showingFront = true;
         nextBtn.disabled = deck.length === 0;
@@ -183,6 +207,10 @@
 
   classSelect.addEventListener("change", function () {
     loadClass(classSelect.value);
+  });
+
+  wordOnlyCheckbox.addEventListener("change", function () {
+    rebuildDeckFromCurrentClass();
   });
 
   cardEl.addEventListener("click", flip);

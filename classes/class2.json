@@ -8,9 +8,9 @@
             "meaning": "书"
         },
         {
-            "spelling": "かばん",
             "pitch": 0,
-            "meaning": "包，公文包"
+            "meaning": "包，公文包",
+            "word": "かばん"
         },
         {
             "word": "ノート",
@@ -205,24 +205,24 @@
             "meaning": "汉语"
         },
         {
-            "spelling": "これ",
             "pitch": 0,
-            "meaning": "这，这个"
+            "meaning": "这，这个",
+            "word": "これ"
         },
         {
-            "spelling": "それ",
             "pitch": 0,
-            "meaning": "那，那个"
+            "meaning": "那，那个",
+            "word": "それ"
         },
         {
-            "spelling": "あれ",
             "pitch": 0,
-            "meaning": "那，那个"
+            "meaning": "那，那个",
+            "word": "あれ"
         },
         {
-            "spelling": "どれ",
             "pitch": 1,
-            "meaning": "哪个"
+            "meaning": "哪个",
+            "word": "どれ"
         },
         {
             "word": "何",
@@ -237,43 +237,43 @@
             "meaning": "谁"
         },
         {
-            "spelling": "どなた",
             "pitch": 1,
-            "meaning": "哪位"
+            "meaning": "哪位",
+            "word": "どなた"
         },
         {
-            "spelling": "この",
             "pitch": 0,
-            "meaning": "这个（连体）"
+            "meaning": "这个（连体）",
+            "word": "この"
         },
         {
-            "spelling": "その",
             "pitch": 0,
-            "meaning": "那个（连体）"
+            "meaning": "那个（连体）",
+            "word": "その"
         },
         {
-            "spelling": "あの",
             "pitch": 0,
-            "meaning": "那个（连体）"
+            "meaning": "那个（连体）",
+            "word": "あの"
         },
         {
-            "spelling": "どの",
             "pitch": 1,
-            "meaning": "哪个"
+            "meaning": "哪个",
+            "word": "どの"
         },
         {
-            "spelling": "えっ",
-            "meaning": "嗯，哎，唉"
+            "meaning": "嗯，哎，唉",
+            "word": "えっ"
         },
         {
-            "spelling": "わあ",
             "pitch": 1,
-            "meaning": "哇"
+            "meaning": "哇",
+            "word": "わあ"
         },
         {
-            "spelling": "ええ",
             "pitch": 1,
-            "meaning": "是（应答）"
+            "meaning": "是（应答）",
+            "word": "ええ"
         },
         {
             "word": "長島",
@@ -300,9 +300,9 @@
             "meaning": "伦敦"
         },
         {
-            "spelling": "おいくつ",
             "pitch": 0,
-            "meaning": "几岁"
+            "meaning": "几岁",
+            "word": "おいくつ"
         },
         {
             "word": "何歳",

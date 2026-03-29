@@ -134,28 +134,28 @@
             "meaning": "我"
         },
         {
-            "spelling": "あなた",
             "pitch": 2,
-            "meaning": "你"
+            "meaning": "你",
+            "word": "あなた"
         },
         {
-            "spelling": "どうも",
             "pitch": 1,
-            "meaning": "很，非常"
+            "meaning": "很，非常",
+            "word": "どうも"
         },
         {
-            "spelling": "はい",
             "pitch": 1,
-            "meaning": "是"
+            "meaning": "是",
+            "word": "はい"
         },
         {
-            "spelling": "いいえ",
             "pitch": 1,
-            "meaning": "不是"
+            "meaning": "不是",
+            "word": "いいえ"
         },
         {
-            "spelling": "あっ",
-            "meaning": "哎"
+            "meaning": "哎",
+            "word": "あっ"
         },
         {
             "word": "李",
@@ -271,19 +271,19 @@
             "meaning": "日中商社"
         },
         {
-            "spelling": "こんにちは",
             "pitch": 5,
-            "meaning": "你好"
+            "meaning": "你好",
+            "word": "こんにちは"
         },
         {
-            "spelling": "すみません",
             "pitch": 4,
-            "meaning": "对不起"
+            "meaning": "对不起",
+            "word": "すみません"
         },
         {
-            "spelling": "どうぞ",
             "pitch": 1,
-            "meaning": "请"
+            "meaning": "请",
+            "word": "どうぞ"
         },
         {
             "word": "～さん、～君",
@@ -297,24 +297,24 @@
             "meaning": "初次见面"
         },
         {
-            "spelling": "こちらこそ",
             "pitch": 4,
-            "meaning": "我才要..."
+            "meaning": "我才要...",
+            "word": "こちらこそ"
         },
         {
-            "spelling": "そうです",
             "pitch": 1,
-            "meaning": "是的"
+            "meaning": "是的",
+            "word": "そうです"
         },
         {
-            "spelling": "ちがいます",
             "pitch": 4,
-            "meaning": "不是"
+            "meaning": "不是",
+            "word": "ちがいます"
         },
         {
-            "spelling": "わかりません",
             "pitch": 5,
-            "meaning": "不知道"
+            "meaning": "不知道",
+            "word": "わかりません"
         }
     ]
 }

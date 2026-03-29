@@ -188,49 +188,49 @@
             "meaning": "星期四"
         },
         {
-            "spelling": "ここ",
             "pitch": 0,
-            "meaning": "这里"
+            "meaning": "这里",
+            "word": "ここ"
         },
         {
-            "spelling": "そこ",
             "pitch": 0,
-            "meaning": "那里"
+            "meaning": "那里",
+            "word": "そこ"
         },
         {
-            "spelling": "あそこ",
             "pitch": 0,
-            "meaning": "那边"
+            "meaning": "那边",
+            "word": "あそこ"
         },
         {
-            "spelling": "こちら",
             "pitch": 0,
-            "meaning": "这边"
+            "meaning": "这边",
+            "word": "こちら"
         },
         {
-            "spelling": "そちら",
             "pitch": 0,
-            "meaning": "那边"
+            "meaning": "那边",
+            "word": "そちら"
         },
         {
-            "spelling": "あちら",
             "pitch": 0,
-            "meaning": "那边"
+            "meaning": "那边",
+            "word": "あちら"
         },
         {
-            "spelling": "どこ",
             "pitch": 1,
-            "meaning": "哪里"
+            "meaning": "哪里",
+            "word": "どこ"
         },
         {
-            "spelling": "どちら",
             "pitch": 1,
-            "meaning": "哪边"
+            "meaning": "哪边",
+            "word": "どちら"
         },
         {
-            "spelling": "あのう",
             "pitch": 0,
-            "meaning": "请问"
+            "meaning": "请问",
+            "word": "あのう"
         },
         {
             "word": "上海",
@@ -243,6 +243,36 @@
             "spelling": "とうきん",
             "pitch": 0,
             "meaning": "东京"
+        },
+        {
+            "word": "お手洗い",
+            "spelling": "おてあらい",
+            "pitch": 2,
+            "meaning": "洗手间"
+        },
+        {
+            "word": "スーパー",
+            "spelling": "すーぱー",
+            "pitch": 1,
+            "meaning": "超市"
+        },
+        {
+            "word": "医者",
+            "spelling": "いしゃ",
+            "pitch": 0,
+            "meaning": "医生"
+        },
+        {
+            "word": "教師",
+            "spelling": "きょうし",
+            "pitch": 1,
+            "meaning": "教师"
+        },
+        {
+            "word": "セーター",
+            "spelling": "せーたー",
+            "pitch": 1,
+            "meaning": "毛衣"
         }
     ]
 }

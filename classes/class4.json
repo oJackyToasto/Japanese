@@ -1,0 +1,290 @@
+{
+    "title": "部屋に机といすがあります",
+    "words": [
+        {
+            "word": "部屋",
+            "spelling": "へや",
+            "pitch": 2,
+            "meaning": "房间"
+        },
+        {
+            "word": "庭",
+            "spelling": "にわ",
+            "pitch": 0,
+            "meaning": "庭院"
+        },
+        {
+           "word": "家",
+           "spelling": "いえ",
+           "pitch": 2,
+           "meaning": "家"
+        },
+        {
+           "word": "居間",
+           "spelling": "いま",
+           "pitch": 2,
+           "meaning": "起居室"
+        },
+        {
+           "word": "冷蔵庫",
+           "spelling": "れいぞうこ",
+           "pitch": 3,
+           "meaning": "冰箱"
+        },
+        {
+           "word": "壁",
+           "spelling": "かべ",
+           "pitch": 0,
+           "meaning": "墙壁"
+        },
+        {
+           "word": "スイッチ",
+           "spelling": "すいっち",
+           "pitch": 2,
+           "meaning": "开关"
+        },
+        {
+           "word": "本棚",
+           "spelling": "ほんだな",
+           "pitch": 1,
+           "meaning": "书架"
+        },
+        {
+           "word": "ベッド",
+           "spelling": "べっど",
+           "pitch": 1,
+           "meaning": "床"
+        },
+        {
+           "word": "猫",
+           "spelling": "ねこ",
+           "pitch": 1,
+           "meaning": "猫"
+        },
+        {
+           "word": "犬",
+           "spelling": "いぬ",
+           "pitch": 2,
+           "meaning": "狗"
+        },
+        {
+           "word": "箱",
+           "spelling": "はこ",
+           "pitch": 0,
+           "meaning": "箱子"
+        },
+        {
+           "word": "眼鏡",
+           "spelling": "めがね",
+           "pitch": 1,
+           "meaning": "眼镜"
+        },
+        {
+           "word": "ビデオ",
+           "spelling": "びでお",
+           "pitch": 1,
+           "meaning": "录像机"
+        },
+        {
+           "word": "サッカーボール",
+           "spelling": "さっかーぼーる",
+           "pitch": 5,
+           "meaning": "足球"
+        },
+        {
+           "word": "ビール",
+           "spelling": "びーる",
+           "pitch": 1,
+           "meaning": "啤酒"
+        },
+        {
+           "word": "ウイスキー",
+           "spelling": "ういすきー",
+           "pitch": 3,
+           "meaning": "威士忌"
+        },
+        {
+           "word": "子供",
+           "spelling": "こども",
+           "pitch": 0,
+           "meaning": "孩子，小孩"
+        },
+        {
+           "word": "兄弟",
+           "spelling": "きょうだい",
+           "pitch": 1,
+           "meaning": "兄弟姐妹"
+        },
+        {
+           "word": "両親",
+           "spelling": "りょうしん",
+           "pitch": 1,
+           "meaning": "父母"
+        },
+        {
+           "word": "妹",
+           "spelling": "いもうと",
+           "pitch": 4,
+           "meaning": "妹妹"
+        },
+        {
+           "word": "男",
+           "spelling": "おとこ",
+           "pitch": 3,
+           "meaning": "男"
+        },
+        {
+           "word": "女",
+           "spelling": "おんな",
+           "pitch": 3,
+           "meaning": "女"
+        },
+        {
+           "word": "生徒",
+           "spelling": "せいと",
+           "pitch": 1,
+           "meaning": "学生"
+        },
+        {
+           "word": "上",
+           "spelling": "うえ",
+           "pitch": 0,
+           "meaning": "上面"
+        },
+        {
+           "word": "外",
+           "spelling": "そと",
+           "pitch": 1,
+           "meaning": "外面"
+        },
+        {
+           "word": "中",
+           "spelling": "なか",
+           "pitch": 1,
+           "meaning": "里面，内部，中间"
+        },
+        {
+           "word": "下",
+           "spelling": "した",
+           "pitch": 0,
+           "meaning": "下面"
+        },
+        {
+           "word": "前",
+           "spelling": "まえ",
+           "pitch": 1,
+           "meaning": "前，前面"
+        },
+        {
+           "word": "後ろ",
+           "spelling": "うしろ",
+           "pitch": 0,
+           "meaning": "后，后面"
+        },
+        {
+           "word": "近く",
+           "spelling": "ちかく",
+           "pitch": 1,
+           "meaning": "近，附近"
+        },
+        {
+           "word": "場所",
+           "spelling": "ばしょ",
+           "pitch": 0,
+           "meaning": "所在地，地方，场所"
+        },
+        {
+           "word": "教室",
+           "spelling": "きょうしつ",
+           "pitch": 0,
+           "meaning": "教室"
+        },
+        {
+           "word": "会議室",
+           "spelling": "かいぎしつ",
+           "pitch": 3,
+           "meaning": "会议室"
+        },
+        {
+           "word": "図書室",
+           "spelling": "としょしつ",
+           "pitch": 2,
+           "meaning": "图书室"
+        },
+        {
+           "word": "公園",
+           "spelling": "こうえん",
+           "pitch": 0,
+           "meaning": "公园"
+        },
+        {
+           "word": "花屋",
+           "spelling": "はなや",
+           "pitch": 2,
+           "meaning": "花店"
+        },
+        {
+           "word": "売店",
+           "spelling": "うりてん",
+           "pitch": 0,
+           "meaning": "小卖部"
+        },
+        {
+           "word": "駅",
+           "spelling": "えき",
+           "pitch": 1,
+           "meaning": "车站"
+        },
+        {
+           "word": "地下鉄",
+           "spelling": "ちかてつ",
+           "pitch": 0,
+           "meaning": "地下铁"
+        },
+        {
+           "word": "木",
+           "spelling": "き",
+           "pitch": 1,
+           "meaning": "树"
+        },
+        {
+           "word": "一人暮らし",
+           "spelling": "ひとりぐらし",
+           "pitch": 4,
+           "meaning": "一人生活"
+        },
+        {
+           "word": "あります",
+           "pitch": 3,
+           "meaning": "有，在（非意志者）"
+        },
+        {
+           "word": "います",
+           "pitch": 2,
+           "meaning": "有，在（具意志者）"
+        },
+        {
+           "word": "ええと",
+           "pitch": 0,
+           "meaning": "啊，嗯"
+        },
+        {
+           "word": "横浜",
+           "spelling": "よこはま",
+           "pitch": 0,
+           "meaning": "横滨"
+        },
+        {
+           "word": "名古屋",
+           "spelling": "なごや",
+           "pitch": 1,
+           "meaning": "名古屋"
+        },
+        {
+           "word": "大阪",
+           "spelling": "おおさか",
+           "pitch": 0,
+           "meaning": "大阪"
+        }
+    ]
+}

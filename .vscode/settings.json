@@ -1,0 +1,18 @@
+{
+  "[json]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.suggest.showSnippets": true
+  },
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.suggest.showSnippets": true
+  }
+}
