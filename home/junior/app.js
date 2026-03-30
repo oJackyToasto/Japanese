@@ -2,7 +2,7 @@
   "use strict";
 
   // To add a new class: (1) add classN.json under classes/, (2) add "classN" to CLASS_IDS below
-  const CLASS_IDS = ["class1", "class2", "class3"];
+  const CLASS_IDS = ["class1", "class2", "class3", "class4"];
   const PITCH_SYMBOLS = "⓪①②③④⑤";
   const CLASS_BASE = "../../classes";
 

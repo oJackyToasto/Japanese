@@ -285,6 +285,18 @@
            "spelling": "おおさか",
            "pitch": 0,
            "meaning": "大阪"
+        },
+        {
+           "word": "コーラー",
+           "spelling": "こーらー",
+           "pitch": 1,
+           "meaning": "可乐"
+        },
+        {
+           "word": "ケーキ",
+           "spelling": "けーき",
+           "pitch": 1,
+           "meaning": "蛋糕"
         }
     ]
 }
