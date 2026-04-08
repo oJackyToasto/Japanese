@@ -3,35 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>単語 — Class Flip Cards</title>
+  <title>Junior Study</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <div class="main">
-    <div class="opts">
-      <label>Class <select id="class-select" aria-label="Select class">
-        <option value="class1">Class 1</option>
-        <option value="class2">Class 2</option>
-        <option value="class3">Class 3</option>
-      </select></label>
-      <span id="class-title" class="class-title"></span>
-      <label class="word-only-label" title="Only show the word on the front (kanji/kana); do not include spelling→word cards.">
-        <input type="checkbox" id="word-only" /> Word only
-      </label>
-    </div>
     <div class="shadow">
       <div class="border">
-        <div class="card" id="card">
-          <div id="front" class="side front"></div>
-          <div id="back" class="side back"></div>
+        <div class="card" style="cursor: default; min-height: 220px;">
+          <div class="side front" style="display: flex;">
+            <div class="main-text">Junior Decks</div>
+            <div class="sub-text">Choose a study mode</div>
+            <div style="display: flex; gap: 10px; margin-top: 8px;">
+              <a class="next-btn" href="./vocab/" style="text-decoration: none; display: inline-block;">Vocab</a>
+              <a class="next-btn" href="./verb/" style="text-decoration: none; display: inline-block;">Verb</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="footer">
-      <p class="hint">Tap or Space to flip · N for next card</p>
-      <button type="button" id="next-btn" class="next-btn">Next</button>
+      <p class="hint">Vocab: word/spelling cards · Verb: dictionary/ます conversion cards</p>
     </div>
   </div>
-  <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+Local Japanese practice app (Flask + DeepSeek)
+
+1) Create a virtual environment and install dependencies (from repo root):
+
+   pip install -r requirements.txt
+
+2) Set your API key — either:
+
+   A) Create a `.env` file in the repo root (same folder as `run.py`) with:
+
+      DEEPSEEK_API_KEY=your-key-here
+
+      Keys from DeepSeek usually look like `sk-...`; paste the full string.
+
+   B) Or set the variable in the shell (PowerShell example):
+
+      setx DEEPSEEK_API_KEY "your-key-here"
+
+      Open a new terminal so the variable is visible.
+
+3) Import vocabulary and verbs into SQLite:
+
+   flask --app run sync-data
+
+   This reads classes/vocabs/class*.json and classes/verbs/*.json into app/data/learning.db.
+
+4) Run the web UI:
+
+   python run.py
+
+   Or: flask --app run run --debug
+
+5) Open http://127.0.0.1:5000 in your browser.
+
+Verb JSON entries: use "verbs" array with objects containing at least
+lemma, reading, meaning, verb_type (1/2/3), and optional notes.
+Optional key "verb" is a display/surface form if different from lemma.

@@ -1,0 +1,12 @@
+{
+    "title": "基础",
+    "verbs": [
+        {
+            "lemma": "走る",
+            "reading": "はしる",
+            "meaning": "跑",
+            "verb_type": 1,
+            "notes": "一类（五段），不是二类。"
+        }
+    ]
+}

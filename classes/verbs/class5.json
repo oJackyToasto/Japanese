@@ -1,0 +1,52 @@
+{
+    "title": "森さんは　七時に　起きます",
+    "verbs": [
+        {
+            "lemma": "休む",
+            "reading": "やすむ",
+            "meaning": "休息",
+            "verb_type": 1
+        },
+        {
+            "lemma": "働く",
+            "reading": "はたらく",
+            "meaning": "工作",
+            "verb_type": 1
+        },
+        {
+            "lemma": "始まる",
+            "reading": "はじまる",
+            "meaning": "开始",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "終わる",
+            "reading": "おわる",
+            "meaning": "结束",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "起きる",
+            "reading": "おきる",
+            "meaning": "起床",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "寝る",
+            "reading": "ねる",
+            "meaning": "睡觉",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "勉強する",
+            "reading": "べんきょうする",
+            "meaning": "学习",
+            "verb_type": 3,
+            "notes": ""
+        }
+    ]
+}

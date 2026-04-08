@@ -1,0 +1,204 @@
+{
+    "title": "句型进度表（按课次）",
+    "classes": [
+        {
+            "class_no": 1,
+            "class_title": "李さんは中国人です",
+            "structures": [
+                {
+                    "id": "c1-s1",
+                    "pattern": "NはNです",
+                    "meaning": "A是B",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c1-s2",
+                    "pattern": "NはNではありません",
+                    "meaning": "A不是B",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c1-s3",
+                    "pattern": "NはNですか",
+                    "meaning": "A是B吗",
+                    "enabled": true,
+                    "notes": ""
+                }
+            ]
+        },
+        {
+            "class_no": 2,
+            "class_title": "これわ　本です",
+            "structures": [
+                {
+                    "id": "c2-s1",
+                    "pattern": "これ/それ/あれ/どれ",
+                    "meaning": "这个/那个/那个/哪个",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c2-s2",
+                    "pattern": "この/その/あの/どの",
+                    "meaning": "这个/那个/那个/哪个",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c2-s3",
+                    "pattern": "NのN",
+                    "meaning": "A的B",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c2-s4",
+                    "pattern": "誰ですか/何ですか",
+                    "meaning": "谁/什么",
+                    "enabled": true,
+                    "notes": ""
+                }
+            ]
+        },
+        {
+            "class_no": 3,
+            "class_title": "ここはデパートです",
+            "structures": [
+                {
+                    "id": "c3-s1",
+                    "pattern": "ここ/そこ/あそこ/どこ",
+                    "meaning": "这里/那里/那个地方/哪个地方",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c3-s2",
+                    "pattern": "NはN(场所)です",
+                    "meaning": "A在B场所",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c3-s3",
+                    "pattern": "Nはどこですか",
+                    "meaning": "A在哪里",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c3-s4",
+                    "pattern": "NもNです",
+                    "meaning": "A也是B",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c3-s5",
+                    "pattern": "NはNですか、Nですか",
+                    "meaning": "A是B吗、是C吗",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c3-s6",
+                    "pattern": "Nはいくらですか",
+                    "meaning": "A多少钱",
+                    "enabled": true,
+                    "notes": ""
+                }
+            ]
+        },
+        {
+            "class_no": 4,
+            "class_title": "部屋に机といすがあります",
+            "structures": [
+                {
+                    "id": "c4-s1",
+                    "pattern": "N(场所)にN(物)があります",
+                    "meaning": "A地有B物",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c4-s2",
+                    "pattern": "N(场所)にN(物)がいます",
+                    "meaning": "A地有B生物",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c4-s3",
+                    "pattern": "N(物)はN(场所)にあります",
+                    "meaning": "A物在B地",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c4-s4",
+                    "pattern": "N(物)はN(场所)にいます",
+                    "meaning": "A生物在B地",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c4-s5",
+                    "pattern": "NとN",
+                    "meaning": "A和B",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c4-s6",
+                    "pattern": "Nの上/外/中/下/前/後ろ/近く",
+                    "meaning": "A的上/外/中/下/前/后/近处",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c4-s7",
+                    "pattern": "疑问句+も+动词(否定)",
+                    "meaning": "疑问句+も+动词(否定)",
+                    "enabled": true,
+                    "notes": "如: 部屋に誰もいません"
+                }
+            ]
+        },
+        {
+            "class_no": 5,
+            "class_title": "森さんは　七時に　起きます",
+            "structures": [
+                {
+                    "id": "c5-s1",
+                    "pattern": "Nは时刻にVます",
+                    "meaning": "A在几点做某事",
+                    "enabled": true,
+                    "notes": "时刻: 七時、九時等"
+                },
+                {
+                    "id": "c5-s2",
+                    "pattern": "Nは曜日にVます",
+                    "meaning": "A在星期几做某事",
+                    "enabled": true,
+                    "notes": ""
+                },
+                {
+                    "id": "c5-s3",
+                    "pattern": "Nは时间名词にVます",
+                    "meaning": "A在某时间做某事",
+                    "enabled": true,
+                    "notes": "如: 昨日、今朝、来週"
+                }
+            ]
+        }
+    ],
+    "schema_notes": {
+        "class_no": "与 vocabs/classN.json 的 N 对齐",
+        "structures": "该课已学习句型列表",
+        "pattern": "日语句型骨架（可用 N / Vます / V原形 占位）",
+        "meaning": "中文语法含义",
+        "enabled": "是否允许 AI 使用该句型",
+        "notes": "可选说明，写特殊限制"
+    }
+}

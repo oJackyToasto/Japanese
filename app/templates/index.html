@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="shadow">
+  <div class="border">
+    <div class="card app-card">
+      <div class="side front app-side" style="display:flex;">
+        <div class="main-text">日语翻译练习</div>
+
+        {% if current %}
+          <p class="jp-text">{{ current.japanese_sentence }}</p>
+          {% if current.hint %}
+            <p class="hint">提示：{{ current.hint }}</p>
+          {% endif %}
+          <form method="post" action="{{ url_for('main.submit') }}" class="app-form">
+            <label for="user_answer">中文翻译</label>
+            <textarea id="user_answer" name="user_answer" rows="3" required></textarea>
+            <button type="submit" class="next-btn">提交批改</button>
+          </form>
+        {% elif last %}
+          <p class="jp-text">{{ last.question.japanese_sentence }}</p>
+          <p class="result-line"><strong>你的翻译：</strong>{{ last.user_answer }}</p>
+          <p class="result-line"><strong>判定：</strong>{% if last.grading.is_correct %}正确{% else %}有误{% endif %}</p>
+          <p class="result-line"><strong>说明：</strong>{{ last.grading.feedback }}</p>
+          {% if not last.grading.is_correct and last.grading.correction %}
+            <p class="result-line"><strong>参考译文：</strong>{{ last.grading.correction }}</p>
+          {% endif %}
+          <form method="post" action="{{ url_for('main.generate') }}" class="app-form">
+            <input type="hidden" name="class_min" value="{{ last.question.class_min }}">
+            <input type="hidden" name="class_max" value="{{ last.question.class_max }}">
+            <input type="hidden" name="verb_form_mode" value="{{ last.question.verb_form_mode }}">
+            <button type="submit" class="next-btn">用相同设置再来一题</button>
+          </form>
+        {% else %}
+          <p class="sub-text">设置课次和动词形态后生成题目</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="shadow app-panel">
+  <div class="border">
+    <div class="card app-settings">
+      <form method="post" action="{{ url_for('main.generate') }}" class="app-form">
+        <label>课次范围（词汇）</label>
+        <div class="inline-row">
+          <label>从 <input type="number" name="class_min" value="1" min="1" max="99"></label>
+          <label>到 <input type="number" name="class_max" value="5" min="1" max="99"></label>
+        </div>
+        <label>动词形态</label>
+        <label><input type="radio" name="verb_form_mode" value="masu" checked> ます形</label>
+        <label><input type="radio" name="verb_form_mode" value="lemma"> 原形</label>
+        <button type="submit" class="next-btn">{% if current %}重新生成题目{% else %}生成题目{% endif %}</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="hint">首次使用先执行 <code>flask --app run sync-data</code>，并在 <code>.env</code> 设置 <code>DEEPSEEK_API_KEY</code>。</p>
+</div>
+{% endblock %}

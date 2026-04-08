@@ -1,0 +1,279 @@
+{
+    "title": "森さんは　七時に　起きます",
+    "words": [
+        {
+           "word": "今",
+           "spelling": "いま",
+           "pitch": 1,
+           "meaning": "现在"
+        },
+        {
+           "word": "来週",
+           "spelling": "らいしゅう",
+           "pitch": 0,
+           "meaning": "下周"
+        },
+        {
+           "word": "先週",
+           "spelling": "せんしゅう",
+           "pitch": 0,
+           "meaning": "上周"
+        },
+        {
+           "word": "再来週",
+           "spelling": "さらいしゅう",
+           "pitch": 0,
+           "meaning": "下下周"
+        },
+        {
+           "word": "今週",
+           "spelling": "こんしゅう",
+           "pitch": 0,
+           "meaning": "这周"
+        },
+        {
+           "word": "昨日",
+           "spelling": "きのう",
+           "pitch": 0,
+           "meaning": "昨天"
+        },
+        {
+           "word": "明日",
+           "spelling": "あした",
+           "pitch": 3,
+           "meaning": "明天"
+        },
+        {
+           "word": "明後日",
+           "spelling": "あさって",
+           "pitch": 2,
+           "meaning": "后天"
+        },
+        {
+           "word": "一昨日",
+           "spelling": "おととい",
+           "pitch": 3,
+           "meaning": "前天"
+        },
+        {
+           "word": "毎日",
+           "spelling": "まいにち",
+           "pitch": 1,
+           "meaning": "每天"
+        },
+        {
+           "word": "毎朝",
+           "spelling": "まいあさ",
+           "pitch": 1,
+           "meaning": "每天早上"
+        },
+        {
+           "word": "毎晩",
+           "spelling": "まいばん",
+           "pitch": 1,
+           "meaning": "每天晚上"
+        },
+        {
+           "word": "毎週",
+           "spelling": "まいしゅう",
+           "pitch": 0,
+           "meaning": "每周"
+        },
+        {
+           "word": "午前",
+           "spelling": "ごぜん",
+           "pitch": 1,
+           "meaning": "上午"
+        },
+        {
+           "word": "午後",
+           "spelling": "ごご",
+           "pitch": 1,
+           "meaning": "下午"
+        },
+        {
+           "word": "日曜日",
+           "spelling": "にちようび",
+           "pitch": 3,
+           "meaning": "星期日"
+        },
+        {
+           "word": "月曜日",
+           "spelling": "げつようび",
+           "pitch": 3,
+           "meaning": "星期一"
+        },
+        {
+           "word": "火曜日",
+           "spelling": "かようび",
+           "pitch": 2,
+           "meaning": "星期二"
+        },
+        {
+           "word": "水曜日",
+           "spelling": "すいようび",
+           "pitch": 3,
+           "meaning": "星期三"
+        },
+        {
+           "word": "木曜日",
+           "spelling": "もくようび",
+           "pitch": 3,
+           "meaning": "星期四"
+        },
+        {
+           "word": "金曜日",
+           "spelling": "きんようび",
+           "pitch": 3,
+           "meaning": "星期五"
+        },
+        {
+           "word": "土曜日",
+           "spelling": "どようび",
+           "pitch": 2,
+           "meaning": "星期六"
+        },
+        {
+           "word": "今朝",
+           "spelling": "けさ",
+           "pitch": 1,
+           "meaning": "今天早上"
+        },
+        {
+           "word": "今晩",
+           "spelling": "こんばん",
+           "pitch": 1,
+           "meaning": "今天晚上"
+        },
+        {
+           "word": "来年",
+           "spelling": "らいねん",
+           "pitch": 0,
+           "meaning": "明年"
+        },
+        {
+           "word": "去年",
+           "spelling": "きょねん",
+           "pitch": 1,
+           "meaning": "去年"
+        },
+        {
+           "word": "夜",
+           "spelling": "よる",
+           "pitch": 1,
+           "meaning": "晚上，夜里"
+        },
+        {
+           "word": "晚",
+           "spelling": "ばん",
+           "pitch": 0,
+           "meaning": "晚上"
+        },
+        {
+           "word": "朝",
+           "spelling": "あさ",
+           "pitch": 1,
+           "meaning": "早晨"
+        },
+        {
+           "word": "学校",
+           "spelling": "がっこう",
+           "pitch": 0,
+           "meaning": "学校"
+        },
+        {
+           "word": "試験",
+           "spelling": "しけん",
+           "pitch": 2,
+           "meaning": "考试"
+        },
+        {
+           "word": "仕事",
+           "spelling": "しごと",
+           "pitch": 0,
+           "meaning": "工作"
+        },
+        {
+           "word": "遅刻",
+           "spelling": "ちこく",
+           "pitch": 0,
+           "meaning": "迟到"
+        },
+        {
+           "word": "休み",
+           "spelling": "やすみ",
+           "pitch": 0,
+           "meaning": "休息"
+        },
+        {
+           "word": "出張",
+           "spelling": "しゅっちょう",
+           "pitch": 0,
+           "meaning": "出差"
+        },
+        {
+           "word": "研修",
+           "spelling": "けんしゅう",
+           "pitch": 0,
+           "meaning": "研修"
+        },
+        {
+           "word": "旅行",
+           "spelling": "りょこう",
+           "pitch": 0,
+           "meaning": "旅游"
+        },
+        {
+           "word": "展覧会",
+           "spelling": "てんらんかい",
+           "pitch": 3,
+           "meaning": "展览会"
+        },
+        {
+           "word": "歓迎会",
+           "spelling": "かんげいかい",
+           "pitch": 3,
+           "meaning": "欢迎会"
+        },
+        {
+           "word": "パーティ",
+           "spelling": "ぱーてぃ",
+           "pitch": 1,
+           "meaning": "派对，联欢会"
+        },
+        {
+           "word": "お宅",
+           "spelling": "おたく",
+           "pitch": 0,
+           "meaning": "您家，府上，（新）宅男"
+        },
+        {
+           "word": "いつ",
+           "pitch": 1,
+           "meaning": "什么时候"
+        },
+        {
+           "word": "いつも",
+           "spelling": "いつも",
+           "pitch": 1,
+           "meaning": "经常"
+        },
+        {
+           "word": "北京支社",
+           "spelling": "ペキンししゃ",
+           "pitch": 4,  
+           "meaning": "北京分社"
+        },
+        {
+           "word": "神戸",
+           "spelling": "こうべ",
+           "pitch": 1,
+           "meaning": "神户"
+        },
+        {
+           "word": "おはよう",
+           "pitch": 0,
+           "meaning": "早上好"
+        }
+    ]
+}
