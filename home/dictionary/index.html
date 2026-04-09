@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="main dictionary-main">
+    <div class="opts">
+      <a href="../" class="hint">← Home</a>
+      <label>Type
+        <select id="type-select" aria-label="Select dictionary type">
+          <option value="vocabs">Vocabs</option>
+          <option value="verbs">Verbs</option>
+        </select>
+      </label>
+      <label>JSON
+        <select id="file-select" aria-label="Select json file"></select>
+      </label>
+      <span id="class-title" class="class-title"></span>
+    </div>
+
+    <div class="shadow">
+      <div class="border">
+        <div class="dictionary-wrap" id="dictionary-wrap">
+          <div class="loading">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="hint">Switch type or JSON to view one dictionary file at a time.</p>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

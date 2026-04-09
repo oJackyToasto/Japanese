@@ -200,3 +200,70 @@ body {
 }
 
 .error { color: #c07070; }
+
+/* Home navigation page */
+.nav-card {
+  cursor: default;
+  min-height: 260px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-title {
+  font-size: 30px;
+  color: #2d2a2e;
+  text-align: center;
+}
+
+.nav-subtitle {
+  margin: 0 0 8px;
+  color: #5c5a5e;
+  font-size: 16px;
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Dictionary page */
+.dictionary-main {
+  max-width: 900px;
+}
+
+.dictionary-wrap {
+  background: #faf8f5;
+  border-radius: 2px;
+  max-height: 68vh;
+  overflow: auto;
+}
+
+.dict-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #2d2a2e;
+  font-size: 14px;
+}
+
+.dict-table th,
+.dict-table td {
+  border-bottom: 1px solid #d9d3cd;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.dict-table thead th {
+  position: sticky;
+  top: 0;
+  background: #ece7e1;
+  z-index: 1;
+}

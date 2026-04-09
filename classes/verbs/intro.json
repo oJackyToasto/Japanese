@@ -6,7 +6,175 @@
             "reading": "はしる",
             "meaning": "跑",
             "verb_type": 1,
-            "notes": "一类（五段），不是二类。"
+            "notes": "一类特例，不是二类。"
+        },
+        {
+            "lemma": "書く",
+            "reading": "かく",
+            "meaning": "写",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "探す",
+            "reading": "さぐる",
+            "meaning": "找",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "遊ぶ",
+            "reading": "あそぶ",
+            "meaning": "玩",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "困る",
+            "reading": "こまる",
+            "meaning": "困扰",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "怒る",
+            "reading": "おこる",
+            "meaning": "生气",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "会う",
+            "reading": "あう",
+            "meaning": "见面",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "帰る",
+            "reading": "かえる",
+            "meaning": "回家",
+            "verb_type": 1,
+            "notes": "一类特例，不是二类。"
+        },
+        {
+            "lemma": "切る",
+            "reading": "きる",
+            "meaning": "切",
+            "verb_type": 1,
+            "notes": "一类特例，不是二类。"
+        },
+        {
+            "lemma": "吸う",
+            "reading": "すう",
+            "meaning": "吸",
+            "verb_type": 1,
+            "notes": ""
+        },       
+        {
+            "lemma": "起きる",
+            "reading": "おきる",
+            "meaning": "起床",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "着る",
+            "reading": "きる",
+            "meaning": "穿",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "食べる",
+            "reading": "たべる",
+            "meaning": "吃",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "見える",
+            "reading": "みえる",
+            "meaning": "看见",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "教える",
+            "reading": "おしえる",
+            "meaning": "教",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "受ける",
+            "reading": "うける",
+            "meaning": "接受",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "開ける",
+            "reading": "あける",
+            "meaning": "打开",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "調べる",
+            "reading": "しらべる",
+            "meaning": "调查",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "来る",
+            "reading": "くる",
+            "meaning": "来",
+            "verb_type": 3,
+            "notes": ""
+        },
+        {
+            "lemma": "する",
+            "reading": "する",
+            "meaning": "做",
+            "verb_type": 3,
+            "notes": "可在前面加名词构成自动词"
+        },
+        {
+            "lemma": "勉強する",
+            "reading": "べんきょうする",
+            "meaning": "学习",
+            "verb_type": 3,
+            "notes": "特殊动词，由名词+する构成"
+        },
+        {
+            "lemma": "努力する",
+            "reading": "どりょくする",
+            "meaning": "努力",
+            "verb_type": 3,
+            "notes": "特殊动词，由名词+する构成"
+        },
+        {
+            "lemma": "運動する",
+            "reading": "うんどうする",
+            "meaning": "运动",
+            "verb_type": 3,
+            "notes": "特殊动词，由名词+する构成"
+        },
+        {
+            "lemma": "散歩する",
+            "reading": "さんぽする",
+            "meaning": "散步",
+            "verb_type": 3,
+            "notes": "特殊动词，由名词+する构成"
+        },
+        {
+            "lemma": "洗濯する",
+            "reading": "せんたくする",
+            "meaning": "洗",
+            "verb_type": 3,
+            "notes": "特殊动词，由名词+する构成"
         }
     ]
 }

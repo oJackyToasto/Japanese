@@ -2,9 +2,14 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sqlite3
+import time
+import uuid
 from dataclasses import dataclass
+
+from flask import current_app
 
 from app.services.verb_masu import masu_form
 
@@ -66,14 +71,46 @@ class AllowedPack:
     sorted_by_len: list[str]
 
 
+def _debug_log(hypothesis_id: str, location: str, message: str, data: dict) -> None:
+    # region agent log
+    try:
+        payload = {
+            "id": f"log_{int(time.time() * 1000)}_{uuid.uuid4().hex[:8]}",
+            "runId": "debug-3",
+            "hypothesisId": hypothesis_id,
+            "location": location,
+            "message": message,
+            "data": data,
+            "timestamp": int(time.time() * 1000),
+        }
+        log_path = current_app.config["REPO_ROOT"] / ".cursor" / "debug.log"
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        with log_path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+    # endregion
+
+
+def _normalized_variants(token: str) -> set[str]:
+    """Generate safe surface variants for annotated vocab like '森(姓)'."""
+    out = {token}
+    # Support both half-width and full-width annotation brackets.
+    stripped = re.sub(r"[\(（][^\)）]*[\)）]", "", token).strip()
+    if stripped:
+        out.add(stripped)
+    return out
+
+
 def load_allowed_pack(
     conn: sqlite3.Cursor | sqlite3.Connection,
     class_min: int,
     class_max: int,
-    verb_form_mode: str,
 ) -> AllowedPack:
-    """verb_form_mode: 'masu' or 'lemma'."""
+    """Build allowed token pack from class range, with common verb forms."""
     tokens: set[str] = set(GRAMMAR_TOKENS)
+    vocab_rows = 0
+    verb_rows = 0
 
     for row in conn.execute(
         """
@@ -82,28 +119,50 @@ def load_allowed_pack(
         """,
         (class_min, class_max),
     ):
+        vocab_rows += 1
         w = (row["word"] or "").strip()
         if w:
-            tokens.add(w)
+            tokens.update(_normalized_variants(w))
         sp = (row["spelling"] or "").strip() if row["spelling"] else ""
         if sp:
-            tokens.add(sp)
+            tokens.update(_normalized_variants(sp))
 
     for row in conn.execute(
-        "SELECT lemma, verb_type, verb_display FROM verb_items",
+        """
+        SELECT lemma, verb_type, verb_display
+        FROM verb_items
+        WHERE class_no >= ? AND class_no <= ?
+        """,
+        (class_min, class_max),
     ):
+        verb_rows += 1
         lemma = (row["lemma"] or "").strip()
         vt = int(row["verb_type"])
         disp = (row["verb_display"] or "").strip() if row["verb_display"] else ""
         if disp:
-            tokens.add(disp)
-        if verb_form_mode == "lemma":
-            tokens.add(lemma)
-        else:
-            tokens.add(masu_form(lemma, vt))
+            tokens.update(_normalized_variants(disp))
+        tokens.update(_normalized_variants(lemma))
+        tokens.update(_normalized_variants(masu_form(lemma, vt)))
 
     # Longest-first greedy segmentation
     lst = sorted(tokens, key=len, reverse=True)
+    _debug_log(
+        "D1",
+        "app/services/allowed_tokens.py:load_allowed_pack",
+        "allowed_pack_stats",
+        {
+            "class_min": class_min,
+            "class_max": class_max,
+            "vocab_rows_in_range": vocab_rows,
+            "verb_rows_in_range": verb_rows,
+            "has_jin_surname_kanji": "金" in tokens,
+            "has_jin_surname_annotated": "金(姓)" in tokens,
+            "has_mori_surname_kanji": "森" in tokens,
+            "has_shichiji": "七時" in tokens,
+            "has_benkyo_shimasu": "勉強します" in tokens,
+            "token_count": len(tokens),
+        },
+    )
     return AllowedPack(tokens=list(tokens), sorted_by_len=lst)
 
 
@@ -127,12 +186,19 @@ def can_segment(sentence: str, pack: AllowedPack) -> tuple[bool, str]:
         if ch.isspace():
             i += 1
             continue
-        # Allow unknown hiragana function-word chunks (particles/auxiliaries) to avoid hard-coding.
-        m = re.match(r"[\u3040-\u309f]+", s[i:])
-        if m:
-            i += len(m.group(0))
-            continue
-        return False, f"Cannot match from index {i}: {s[i : i + 10]!r}..."
+        chunk = s[i : i + 10]
+        _debug_log(
+            "D2",
+            "app/services/allowed_tokens.py:can_segment",
+            "segment_failed",
+            {
+                "sentence": s,
+                "index": i,
+                "chunk": chunk,
+                "first_char": s[i] if i < len(s) else "",
+            },
+        )
+        return False, f"Cannot match from index {i}: {chunk!r}..."
     return True, ""
 
 

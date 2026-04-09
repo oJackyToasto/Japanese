@@ -171,24 +171,45 @@
             "structures": [
                 {
                     "id": "c5-s1",
-                    "pattern": "Nは时刻にVます",
-                    "meaning": "A在几点做某事",
+                    "pattern": "NはN(时间)にVます",
+                    "meaning": "A在B时间做C事",
                     "enabled": true,
                     "notes": "时刻: 七時、九時等"
                 },
                 {
                     "id": "c5-s2",
-                    "pattern": "Nは曜日にVます",
-                    "meaning": "A在星期几做某事",
+                    "pattern": "V(ます), V(ません), V(ました), V(ませんでした)",
+                    "meaning": "动词的ます形式和其变形",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "可以使用的动词形式"
                 },
                 {
                     "id": "c5-s3",
-                    "pattern": "Nは时间名词にVます",
-                    "meaning": "A在某时间做某事",
+                    "pattern": "N(时)からN(时)までVます",
+                    "meaning": "A从B时间到C时间做D事",
                     "enabled": true,
-                    "notes": "如: 昨日、今朝、来週"
+                    "notes": "可单独用，如: N(时)までVます 或 N(时)からVます"
+                },
+                {
+                    "id": "c5-s4",
+                    "pattern": "(问时间词)Vます",
+                    "meaning": "问时间词做某事",
+                    "enabled": true,
+                    "notes": "问时间词有: 何時に、いつ、何曜日に、何日に"
+                },
+                {
+                    "id": "c5-s5",
+                    "pattern": "(职位)/(名)(职位)",
+                    "meaning": "(有礼貌的)称呼可直接称职位或姓名+职位",
+                    "enabled": true,
+                    "notes": "如: 森さんは社長です"
+                },
+                {
+                    "id": "c5-s6",
+                    "pattern": "A(时间)B(时间)",
+                    "meaning": "A若是‘每’，连接时不用の",
+                    "enabled": true,
+                    "notes": "如: 毎日、毎週、毎年、毎朝、毎晩"
                 }
             ]
         }

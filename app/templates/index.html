@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block body %}
+{% set selected_class_min = current.class_min if current else (last.question.class_min if last else 1) %}
+{% set selected_class_max = current.class_max if current else (last.question.class_max if last else 5) %}
+{% set include_previous_vocab = current.include_previous_vocab if current else (last.question.include_previous_vocab if last and last.question.include_previous_vocab is defined else false) %}
 <div class="shadow">
   <div class="border">
     <div class="card app-card">
@@ -27,11 +30,11 @@
           <form method="post" action="{{ url_for('main.generate') }}" class="app-form">
             <input type="hidden" name="class_min" value="{{ last.question.class_min }}">
             <input type="hidden" name="class_max" value="{{ last.question.class_max }}">
-            <input type="hidden" name="verb_form_mode" value="{{ last.question.verb_form_mode }}">
+            <input type="hidden" name="include_previous_vocab" value="{% if last.question.include_previous_vocab %}1{% else %}0{% endif %}">
             <button type="submit" class="next-btn">用相同设置再来一题</button>
           </form>
         {% else %}
-          <p class="sub-text">设置课次和动词形态后生成题目</p>
+          <p class="sub-text">设置课次范围后生成题目</p>
         {% endif %}
       </div>
     </div>
@@ -44,12 +47,13 @@
       <form method="post" action="{{ url_for('main.generate') }}" class="app-form">
         <label>课次范围（词汇）</label>
         <div class="inline-row">
-          <label>从 <input type="number" name="class_min" value="1" min="1" max="99"></label>
-          <label>到 <input type="number" name="class_max" value="5" min="1" max="99"></label>
+          <label>从 <input type="number" name="class_min" value="{{ selected_class_min }}" min="1" max="99"></label>
+          <label>到 <input type="number" name="class_max" value="{{ selected_class_max }}" min="1" max="99"></label>
         </div>
-        <label>动词形态</label>
-        <label><input type="radio" name="verb_form_mode" value="masu" checked> ます形</label>
-        <label><input type="radio" name="verb_form_mode" value="lemma"> 原形</label>
+        <label>
+          <input type="checkbox" name="include_previous_vocab" value="1" {% if include_previous_vocab %}checked{% endif %}>
+          启用历史词汇（使用 1 到最大课次的词汇和动词）
+        </label>
         <button type="submit" class="next-btn">{% if current %}重新生成题目{% else %}生成题目{% endif %}</button>
       </form>
     </div>

@@ -10,6 +10,7 @@ import uuid
 from flask import (
     Blueprint,
     flash,
+    current_app,
     redirect,
     render_template,
     request,
@@ -18,6 +19,7 @@ from flask import (
 )
 
 from app.db import get_db
+from app.importer import sync_all
 from app.services.practice import generate_question, grade_answer
 
 bp = Blueprint("main", __name__, url_prefix="")
@@ -56,8 +58,22 @@ def _as_bool(value: object) -> bool:
     return False
 
 
+def _as_form_bool(value: object) -> bool:
+    if value is None:
+        return False
+    return str(value).strip().lower() in ("1", "true", "yes", "on")
+
+
 def _row_count(conn: sqlite3.Connection, table: str) -> int:
     cur = conn.execute(f"SELECT COUNT(*) AS c FROM {table}")
+    return int(cur.fetchone()["c"])
+
+
+def _row_count_in_range(conn: sqlite3.Connection, table: str, class_min: int, class_max: int) -> int:
+    cur = conn.execute(
+        f"SELECT COUNT(*) AS c FROM {table} WHERE class_no >= ? AND class_no <= ?",
+        (class_min, class_max),
+    )
     return int(cur.fetchone()["c"])
 
 
@@ -80,20 +96,36 @@ def generate():
         return redirect(url_for("main.index"))
     class_min = max(1, min(class_min, 99))
     class_max = max(class_min, min(class_max, 99))
-    mode = (request.form.get("verb_form_mode") or "masu").strip()
-    if mode not in ("masu", "lemma"):
-        mode = "masu"
+    include_previous_vocab = _as_form_bool(request.form.get("include_previous_vocab"))
     _debug_log(
         "H1",
         "app/routes.py:generate",
         "generate_request_received",
-        {"class_min": class_min, "class_max": class_max, "mode": mode},
+        {
+            "class_min": class_min,
+            "class_max": class_max,
+            "include_previous_vocab": include_previous_vocab,
+        },
     )
 
     conn = get_db()
     if _row_count(conn, "vocab_items") == 0:
         flash("数据库为空。请在项目目录运行：flask --app run sync-data", "error")
         return redirect(url_for("main.index"))
+    # If selected class range has no data (e.g. after schema/import rule change),
+    # auto re-sync from JSON once to self-heal stale local DB.
+    vocab_in_range = _row_count_in_range(conn, "vocab_items", class_min, class_max)
+    verbs_in_range = _row_count_in_range(conn, "verb_items", class_min, class_max)
+    if vocab_in_range == 0 or verbs_in_range == 0:
+        sync_all(conn, current_app.config["CLASSES_VOCABS"], current_app.config["CLASSES_VERBS"])
+        vocab_in_range = _row_count_in_range(conn, "vocab_items", class_min, class_max)
+        verbs_in_range = _row_count_in_range(conn, "verb_items", class_min, class_max)
+        if vocab_in_range == 0 or verbs_in_range == 0:
+            flash(
+                "所选课次范围缺少词汇或动词数据。请运行：flask --app run sync-data",
+                "error",
+            )
+            return redirect(url_for("main.index"))
 
     session.pop("last_result", None)
     try:
@@ -101,7 +133,7 @@ def generate():
             conn,
             class_min=class_min,
             class_max=class_max,
-            verb_form_mode=mode,
+            include_previous_vocab=include_previous_vocab,
         )
     except Exception as e:  # noqa: BLE001
         flash(f"出题失败：{e}", "error")
@@ -113,7 +145,7 @@ def generate():
         "reference_translation": data["reference_translation"],
         "class_min": class_min,
         "class_max": class_max,
-        "verb_form_mode": mode,
+        "include_previous_vocab": include_previous_vocab,
     }
     return redirect(url_for("main.index"))
 
@@ -155,7 +187,7 @@ def submit():
         VALUES (?, ?, ?, ?, ?, ?, ?)
         """,
         (
-            q["verb_form_mode"],
+            "class_range_only",
             int(q["class_min"]),
             int(q["class_max"]),
             json.dumps(

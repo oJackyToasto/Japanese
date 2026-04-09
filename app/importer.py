@@ -11,6 +11,26 @@ def _parse_class_no_from_vocab_filename(name: str) -> int | None:
     return int(m.group(1)) if m else None
 
 
+def _resolve_vocab_class_no(name: str) -> int | None:
+    class_no = _parse_class_no_from_vocab_filename(name)
+    if class_no is not None:
+        return class_no
+    # Special case: quantity vocab belongs to class 5 scope.
+    if name.lower() == "quantity.json":
+        return 5
+    return None
+
+
+def _parse_class_no_from_verb_filename(name: str) -> int | None:
+    m = re.match(r"class(\d+)\.json$", name, re.I)
+    if m:
+        return int(m.group(1))
+    # Special case: intro verbs are available when class 5 is included.
+    if name.lower() == "intro.json":
+        return 5
+    return None
+
+
 def import_vocab_dir(conn: sqlite3.Connection, vocabs_dir: Path) -> int:
     """Clear and reload vocab_items from classes/vocabs/classN.json."""
     conn.execute("DELETE FROM vocab_items")
@@ -18,7 +38,7 @@ def import_vocab_dir(conn: sqlite3.Connection, vocabs_dir: Path) -> int:
     if not vocabs_dir.is_dir():
         return count
     for path in sorted(vocabs_dir.glob("*.json")):
-        class_no = _parse_class_no_from_vocab_filename(path.name)
+        class_no = _resolve_vocab_class_no(path.name)
         if class_no is None:
             continue
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -57,6 +77,9 @@ def import_verbs_dir(conn: sqlite3.Connection, verbs_dir: Path) -> int:
         conn.commit()
         return count
     for path in sorted(verbs_dir.glob("*.json")):
+        class_no = _parse_class_no_from_verb_filename(path.name)
+        if class_no is None:
+            continue
         data = json.loads(path.read_text(encoding="utf-8"))
         for v in _verbs_from_json(data):
             lemma = (v.get("lemma") or "").strip()
@@ -73,10 +96,11 @@ def import_verbs_dir(conn: sqlite3.Connection, verbs_dir: Path) -> int:
             conn.execute(
                 """
                 INSERT INTO verb_items
-                (source_file, verb_display, lemma, reading, meaning, verb_type, notes)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                (class_no, source_file, verb_display, lemma, reading, meaning, verb_type, notes)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
+                    class_no,
                     path.name,
                     verb_display,
                     lemma,

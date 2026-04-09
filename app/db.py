@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS vocab_items (
 
 CREATE TABLE IF NOT EXISTS verb_items (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    class_no INTEGER NOT NULL,
     source_file TEXT NOT NULL,
     verb_display TEXT,
     lemma TEXT NOT NULL,
@@ -68,6 +69,10 @@ def init_db(app: Flask) -> None:
     conn = sqlite3.connect(db_path)
     try:
         conn.executescript(SCHEMA)
+        cols = [r[1] for r in conn.execute("PRAGMA table_info(verb_items)").fetchall()]
+        if "class_no" not in cols:
+            conn.execute("ALTER TABLE verb_items ADD COLUMN class_no INTEGER NOT NULL DEFAULT 1")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_verbs_class ON verb_items(class_no)")
         conn.commit()
     finally:
         conn.close()
