@@ -1404,3 +1404,65 @@
 2026-04-09 22:58:46,458 INFO [app] request start GET /static/style.css
 2026-04-09 22:58:46,459 INFO [app] request end GET /static/style.css status=304 duration_ms=1
 2026-04-09 22:58:46,459 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:58:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-10 00:35:13,616 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-10 00:35:14,625 INFO [werkzeug] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-10 00:35:14,626 INFO [werkzeug] [33mPress CTRL+C to quit[0m
+2026-04-10 00:35:14,628 INFO [werkzeug]  * Restarting with stat
+2026-04-10 00:35:15,168 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-10 00:35:16,193 WARNING [werkzeug]  * Debugger is active!
+2026-04-10 00:35:16,210 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-10 00:35:16,602 INFO [app] request start POST /generate
+2026-04-10 00:35:16,617 INFO [app] question_generation success class_min=5 class_max=5 include_previous_vocab=True sentence=大阪のコンビニは毎晩十一時まで開けます。
+2026-04-10 00:35:16,618 INFO [app] request end POST /generate status=302 duration_ms=16
+2026-04-10 00:35:16,619 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:35:16] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-10 00:35:16,627 INFO [app] request start GET /
+2026-04-10 00:35:16,643 INFO [app] request end GET / status=200 duration_ms=16
+2026-04-10 00:35:16,644 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:35:16] "GET / HTTP/1.1" 200 -
+2026-04-10 00:35:16,682 INFO [app] request start GET /static/style.css
+2026-04-10 00:35:16,744 INFO [app] request end GET /static/style.css status=304 duration_ms=62
+2026-04-10 00:35:16,745 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:35:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-10 00:36:27,638 INFO [app] request start POST /submit
+2026-04-10 00:36:30,268 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:32,619 INFO [app] request end POST /submit status=302 duration_ms=4981
+2026-04-10 00:36:32,623 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:36:32] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-10 00:36:32,639 INFO [app] request start GET /
+2026-04-10 00:36:32,643 INFO [app] request end GET / status=200 duration_ms=4
+2026-04-10 00:36:32,645 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:36:32] "GET / HTTP/1.1" 200 -
+2026-04-10 00:36:32,712 INFO [app] request start GET /static/style.css
+2026-04-10 00:36:32,716 INFO [app] request end GET /static/style.css status=304 duration_ms=3
+2026-04-10 00:36:32,718 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:36:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-10 00:36:38,408 INFO [app] request start POST /generate
+2026-04-10 00:36:38,442 INFO [app] question_generation success class_min=5 class_max=5 include_previous_vocab=True sentence=お母さんは毎晩八時から九時まで散歩します。
+2026-04-10 00:36:38,444 INFO [app] request end POST /generate status=302 duration_ms=35
+2026-04-10 00:36:38,448 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:36:38] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-10 00:36:38,462 INFO [app] request start GET /
+2026-04-10 00:36:38,466 INFO [app] request end GET / status=200 duration_ms=3
+2026-04-10 00:36:38,470 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:36:38] "GET / HTTP/1.1" 200 -
+2026-04-10 00:36:38,516 INFO [app] request start GET /static/style.css
+2026-04-10 00:36:38,519 INFO [app] request end GET /static/style.css status=304 duration_ms=3
+2026-04-10 00:36:38,520 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:36:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-10 00:36:39,337 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:41,149 INFO [app] question_candidate fail attempt=1 total_calls=1 category=allowed_tokens reason=Cannot match from index 9: '行きます。'... sentence=午後三時に図書館へ行きます。
+2026-04-10 00:36:42,107 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:45,013 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:46,552 INFO [app] question_candidate success attempt=2 total_calls=2 sentence=午後三時に図書館で勉強します。
+2026-04-10 00:36:47,470 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:50,395 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:51,830 INFO [app] question_candidate success attempt=1 total_calls=1 sentence=今晩、横浜のレストランでパーティがあります。
+2026-04-10 00:36:53,021 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:55,810 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:36:57,648 INFO [app] question_candidate success attempt=1 total_calls=1 sentence=毎朝七時に起きます。
+2026-04-10 00:36:58,722 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:37:02,248 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-10 00:37:03,559 INFO [app] question_candidate success attempt=1 total_calls=1 sentence=会社員は毎日九時から五時まで働きます。
+2026-04-10 00:42:33,713 INFO [app] request start POST /generate
+2026-04-10 00:42:33,723 INFO [app] question_generation success class_min=5 class_max=5 include_previous_vocab=True sentence=コンビニは毎晩何時に終わりますか。
+2026-04-10 00:42:33,723 INFO [app] request end POST /generate status=302 duration_ms=9
+2026-04-10 00:42:33,725 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:42:33] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-10 00:42:33,731 INFO [app] request start GET /
+2026-04-10 00:42:33,732 INFO [app] request end GET / status=200 duration_ms=0
+2026-04-10 00:42:33,732 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:42:33] "GET / HTTP/1.1" 200 -
+2026-04-10 00:42:33,765 INFO [app] request start GET /static/style.css
+2026-04-10 00:42:33,766 INFO [app] request end GET /static/style.css status=304 duration_ms=0
+2026-04-10 00:42:33,767 INFO [werkzeug] 127.0.0.1 - - [10/Apr/2026 00:42:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

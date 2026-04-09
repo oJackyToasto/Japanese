@@ -1,0 +1,248 @@
+{
+    "title": "吉田さんは来月中国へ行きます",
+    "words": [
+        {
+           "word": "来月",
+           "spelling": "らいげつ",
+           "pitch": 1,
+           "meaning": "下个月"
+        },
+        {
+           "word": "先月",
+           "spelling": "せんげつ",
+           "pitch": 1,
+           "meaning": "上个月"
+        },
+        {
+           "word": "夜中",
+           "spelling": "よなか",
+           "pitch": 3,
+           "meaning": "半夜"
+        },
+        {
+           "word": "昨夜",
+           "spelling": "ゆうべ",
+           "pitch": 0,
+           "meaning": "昨天晚上"
+        },
+        {
+           "word": "コンサート",
+           "spelling": "こんさーと",
+           "pitch": 1,
+           "meaning": "演唱会"
+        },
+        {
+           "word": "クリスマス",
+           "spelling": "くりすます",
+           "pitch": 3,
+           "meaning": "圣诞节"
+        },
+        {
+           "word": "誕生日",
+           "spelling": "たんじょうび",
+           "pitch": 3,
+           "meaning": "生日"
+        },
+        {
+           "word": "こどもの日",
+           "spelling": "こどものひ",
+           "pitch": 5,
+           "meaning": "儿童节"
+        },
+        {
+           "word": "夏休み",
+           "spelling": "なつやすみ",
+           "pitch": 3,
+           "meaning": "暑假"
+        },
+        {
+           "word": "交通機関",
+           "spelling": "こうつうきかん",
+           "pitch": 5,
+           "meaning": "交通工具"
+        },
+        {
+           "word": "新幹線",
+           "spelling": "しんかんせん",
+           "pitch": 3,
+           "meaning": "新干线"
+        },
+        {
+           "word": "飛行機",
+           "spelling": "ひこうき",
+           "pitch": 2,
+           "meaning": "飞机"
+        },
+        {
+           "word": "フェリー",
+           "spelling": "ふぇりー",
+           "pitch": 2,
+           "meaning": "渡轮"
+        },
+        {
+           "word": "電車",
+           "spelling": "でんしゃ",
+           "pitch": 0,
+           "meaning": "电车"
+        },
+        {
+           "word": "バス",
+           "spelling": "ばす",
+           "pitch": 1,
+           "meaning": "巴士"
+        },
+        {
+           "word": "タクシー",
+           "spelling": "たくしー",
+           "pitch": 1,
+           "meaning": "出租车"
+        },
+        {
+           "word": "美術館",
+           "spelling": "びじゅつかん",
+           "pitch": 3,
+           "meaning": "美术馆"
+        },
+        {
+           "word": "アパート",
+           "spelling": "あぱーと",
+           "pitch": 2,
+           "meaning": "公寓"
+        },
+        {
+           "word": "うち",
+           "pitch": 0,
+           "meaning": "家"
+        },
+        {
+           "word": "プール",
+           "spelling": "ぷーる",
+           "pitch": 1,
+           "meaning": "游泳池"
+        },
+        {
+           "word": "友達",
+           "spelling": "ともだち",
+           "pitch": 0,
+           "meaning": "朋友"
+        },
+        {
+           "word": "弟",
+           "spelling": "おとうと",
+           "pitch": 4,
+           "meaning": "弟弟"
+        },
+        {
+           "word": "たしか",
+           "pitch": 1,
+           "meaning": "大概"
+        },
+        {
+           "word": "まっすぐ",
+           "pitch": 3,
+           "meaning": "笔直"
+        },
+        {
+           "word": "一緒に",
+           "spelling": "いっしょに",
+           "pitch": 0,
+           "meaning": "一起"
+        },
+        {
+           "word": "佐藤",
+           "spelling": "さとう",
+           "pitch": 1,
+           "meaning": "佐藤"
+        },
+        {
+           "word": "北京",
+           "spelling": "ペキン",
+           "pitch": 1,
+           "meaning": "北京"
+        },
+        {
+           "word": "アメリカ",
+           "spelling": "あめりか",
+           "pitch": 0,
+           "meaning": "美国"
+        },
+        {
+           "word": "韓国",
+           "spelling": "かんこく",
+           "pitch": 1,
+           "meaning": "韩国"
+        },
+        {
+           "word": "フランス",
+           "spelling": "ふらんす",
+           "pitch": 0,
+           "meaning": "法国"
+        },
+        {
+           "word": "広島",
+           "spelling": "ひろしま",
+           "pitch": 0,
+           "meaning": "广岛"
+        },
+        {
+           "word": "京都",
+           "spelling": "きょうと",
+           "pitch": 1,
+           "meaning": "京都"
+        },
+        {
+           "word": "北海道",
+           "spelling": "ほっかいどう",
+           "pitch": 3,
+           "meaning": "北海道"
+        },
+        {
+           "word": "箱根",
+           "spelling": "はこね",
+           "pitch": 0,
+           "meaning": "箱根"
+        },
+        {
+           "word": "銀座",
+           "spelling": "ぎんざ",
+           "pitch": 0,
+           "meaning": "银座"
+        },
+        {
+           "word": "渋谷",
+           "spelling": "しぶや",
+           "pitch": 0,
+           "meaning": "涉谷"
+        },
+        {
+           "word": "新宿",
+           "spelling": "しんじゅく",
+           "pitch": 0,
+           "meaning": "新宿"
+        },
+        {
+           "word": "お疲れ様でした",
+           "spelling": "おつかれさまでした",
+           "pitch": 7,
+           "meaning": "辛苦了，够累的"
+        },
+        {
+           "word": "お先に失礼します",
+           "spelling": "おさきにしつれいします",
+           "pitch": 10,
+           "meaning": "我先走了，失礼了"
+        },
+        {
+           "word": "歩いて",
+           "spelling": "あるいて",
+           "pitch": 2,
+           "meaning": "步行"
+        },
+        {
+           "word": "大変ですね",
+           "spelling": "だいへんですね",
+           "pitch": 5,
+           "meaning": "真不容易"
+        }
+    ]
+}

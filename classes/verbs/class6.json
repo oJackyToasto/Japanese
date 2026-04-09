@@ -1,0 +1,33 @@
+{
+    "title": "吉田さんは来月中国へ行きます",
+    "verbs": [
+        {
+            "lemma": "来る",
+            "reading": "くる",
+            "meaning": "来",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "行く",
+            "reading": "いく",
+            "meaning": "去",
+            "verb_type": 1,
+            "notes": ""
+        },
+        {
+            "lemma": "帰る",
+            "reading": "かえる",
+            "meaning": "回家",
+            "verb_type": 2,
+            "notes": ""
+        },
+        {
+            "lemma": "歩く",
+            "reading": "あるく",
+            "meaning": "走路",
+            "verb_type": 1,
+            "notes": ""
+        }
+    ]
+}
