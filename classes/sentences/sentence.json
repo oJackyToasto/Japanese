@@ -119,28 +119,32 @@
                     "pattern": "N(场所)にN(物)があります",
                     "meaning": "A地有B物",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c4-s2",
                     "pattern": "N(场所)にN(物)がいます",
                     "meaning": "A地有B生物",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c4-s3",
                     "pattern": "N(物)はN(场所)にあります",
                     "meaning": "A物在B地",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c4-s4",
                     "pattern": "N(物)はN(场所)にいます",
                     "meaning": "A生物在B地",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c4-s5",
@@ -174,14 +178,16 @@
                     "pattern": "NはN(时间)にVます",
                     "meaning": "A在B时间做C事",
                     "enabled": true,
-                    "notes": "时刻: 七時、九時等"
+                    "notes": "时刻: 七時、九時等",
+                    "importance": 3
                 },
                 {
                     "id": "c5-s2",
-                    "pattern": "V(ます), V(ません), V(ました), V(ませんでした)",
-                    "meaning": "动词的ます形式和其变形",
+                    "pattern": "Vます / Vません / Vました / Vませんでした",
+                    "meaning": "动词礼貌体四种基本变形（肯定现在、否定现在、肯定过去、否定过去）",
                     "enabled": true,
-                    "notes": "可以使用的动词形式"
+                    "notes": "出题时应尽量轮换覆盖，不要长期只用 Vます",
+                    "importance": 3
                 },
                 {
                     "id": "c5-s3",

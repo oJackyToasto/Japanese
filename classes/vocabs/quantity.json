@@ -1,5 +1,5 @@
 {
-    "words": [
+    "class5": [
         {
            "word": "一時",
            "spelling": "いちじ",
@@ -139,6 +139,148 @@
            "word": "何分",
            "spelling": "なんふん",
            "meaning": "几分"
+        }
+    ],
+    "class6": [
+        {
+            "word": "一月",
+            "spelling": "いちがつ",
+            "meaning": "一月"
+        },
+        {
+            "word": "二月",
+            "spelling": "にがつ",
+            "meaning": "二月"
+        },
+        {
+            "word": "三月",
+            "spelling": "さんがつ",
+            "meaning": "三月"
+        },
+        {
+            "word": "四月",
+            "spelling": "しがつ",
+            "meaning": "四月"
+        },
+        {
+            "word": "五月",
+            "spelling": "ごがつ",
+            "meaning": "五月"
+        },
+        {
+            "word": "六月",
+            "spelling": "ろくがつ",
+            "meaning": "六月"
+        },
+        {
+            "word": "七月",
+            "spelling": "しちがつ",
+            "meaning": "七月"
+        },
+        {
+            "word": "八月",
+            "spelling": "はちがつ",
+            "meaning": "八月"
+        },
+        {
+            "word": "九月",
+            "spelling": "くがつ",
+            "meaning": "九月"
+        },
+        {
+            "word": "十月",
+            "spelling": "じゅうがつ",
+            "meaning": "十月"
+        },
+        {
+            "word": "十一月",
+            "spelling": "じゅういちがつ",
+            "meaning": "十一月"
+        },
+        {
+            "word": "十二月",
+            "spelling": "じゅうにがつ",
+            "meaning": "十二月"
+        },
+        {
+            "word": "一日",
+            "spelling": "ついたち",
+            "meaning": "一日"
+        },
+        {
+            "word": "二日",
+            "spelling": "ふつか",
+            "meaning": "二日"
+        },
+        {
+            "word": "三日",
+            "spelling": "みっか",
+            "meaning": "三日"
+        },
+        {
+            "word": "四日",
+            "spelling": "よっか",
+            "meaning": "四日"
+        },
+        {
+            "word": "五日",
+            "spelling": "いつか",
+            "meaning": "五日"
+        },
+        {
+            "word": "六日",
+            "spelling": "むいか",
+            "meaning": "六日"
+        },
+        {
+            "word": "七日",
+            "spelling": "なのか",
+            "meaning": "七日"
+        },
+        {
+            "word": "八日",
+            "spelling": "ようか",
+            "meaning": "八日"
+        },
+        {
+            "word": "九日",
+            "spelling": "ここのか",
+            "meaning": "九日"
+        },
+        {
+            "word": "十日",
+            "spelling": "とおか",
+            "meaning": "十日"
+        },
+        {
+            "word": "十一日",
+            "spelling": "じゅういちにち",
+            "meaning": "十一日"
+        },
+        {
+            "word": "十四日",
+            "spelling": "じゅうよっか",
+            "meaning": "十四日"
+        },
+        {
+            "word": "二十日",
+            "spelling": "はつか",
+            "meaning": "二十日"
+        },
+        {
+            "word": "二十四日",
+            "spelling": "にじゅうよっか",
+            "meaning": "二十四日"
+        },
+        {
+           "word": "何月",
+           "spelling": "なんがつ",
+           "meaning": "几月"
+        },
+        {
+           "word": "何日",
+           "spelling": "なんにち",
+           "meaning": "几日"
         }
     ]
 }

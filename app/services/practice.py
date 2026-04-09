@@ -6,8 +6,7 @@ import json
 import random
 import re
 import sqlite3
-import time
-import uuid
+import threading
 from dataclasses import dataclass
 from typing import Any
 
@@ -16,13 +15,19 @@ from flask import current_app
 from app.services.allowed_tokens import AllowedPack, can_segment, load_allowed_pack, allowed_summary_for_prompt
 from app.services.deepseek_client import chat_json
 
+CACHE_TARGET_SIZE = 5
+CACHE_LOW_WATERMARK = 1
+_cache_refill_guard = threading.Lock()
+_cache_refill_inflight: set[str] = set()
+
 
 GENERATOR_SYSTEM = """你是「题目生成器」。你只输出 JSON 对象，不要 Markdown，不要多余说明。
 规则：
 - 难度相当于日语 N5；句子长度约 5～8 个词（日语词，不是汉字字数）。
 - 只使用用户提供的「允许使用的词语」表中的词语；人名、专有名词也必须来自该表。
 - 助词/功能词不做固定白名单限制；可使用自然、基础的日语助词连接句子。
-- 动词优先使用 ます形；不要使用非常见变形（て形、た形、ない形、意志形、命令形），除非该整词明确在允许词表中。
+- 动词使用礼貌体（ます系）时，不要只固定用 Vます；应结合句型在 Vます / Vません / Vました / Vませんでした 中做自然轮换。
+- 不要使用非常见变形（て形、た形、ない形、意志形、命令形），除非该整词明确在允许词表中。
 - 句子必须是「可在现实语境中成立」的自然表达，避免语义冲突与搭配错误（如不合理主语-动词组合、错误宾语搭配）。
 - 时间表达优先使用课内稳定模式：N時にVます / N時からN時までVます / 何時にVます。
 - 若拿不准某个词是否可用，宁可不用；优先选择最基础、最稳妥搭配。
@@ -82,24 +87,7 @@ class ValidationResult:
 
 
 def _debug_log(hypothesis_id: str, location: str, message: str, data: dict[str, Any]) -> None:
-    # region agent log
-    try:
-        payload = {
-            "id": f"log_{int(time.time() * 1000)}_{uuid.uuid4().hex[:8]}",
-            "runId": "pre-fix",
-            "hypothesisId": hypothesis_id,
-            "location": location,
-            "message": message,
-            "data": data,
-            "timestamp": int(time.time() * 1000),
-        }
-        log_path = current_app.config["REPO_ROOT"] / ".cursor" / "debug.log"
-        log_path.parent.mkdir(parents=True, exist_ok=True)
-        with log_path.open("a", encoding="utf-8") as f:
-            f.write(json.dumps(payload, ensure_ascii=False) + "\n")
-    except Exception:
-        pass
-    # endregion
+    return
 
 
 def generate_question(
@@ -151,75 +139,83 @@ def generate_question(
         "structure_balance_built",
         {"block": ctx.structure_balance_block[:300]},
     )
-    required = ("japanese_sentence", "hint", "reference_translation")
-    regen_msg = ctx.base_user_message
-    seen_bad: list[str] = []
-    last_error = "unknown"
-    attempt = 0
-    total_calls = 0
-    while attempt < config.max_attempts and total_calls < config.max_total_calls:
-        total_calls += 1
-        current_attempt = attempt + 1
-        data = chat_json(
-            system=GENERATOR_SYSTEM,
-            user=regen_msg,
-            temperature=(
-                config.first_attempt_temperature
-                if current_attempt == 1
-                else config.retry_temperature
-            ),
-            max_retries=config.chat_retries_per_attempt,
-        )
-        for k in required:
-            if k not in data:
-                raise KeyError(f"Missing key in generator JSON: {k}")
-        ja = str(data["japanese_sentence"]).strip()
-        if ja in seen_bad:
-            last_error = "generator repeated a previously rejected sentence"
-            regen_msg = (
-                ctx.base_user_message
-                + "\n\n你重复了已判定不合格的句子，禁止再次输出以下句子：\n"
-                + "\n".join(f"- {s}" for s in seen_bad[-3:])
-                + "\n请输出一个全新句子，且主语和动词都必须不同。"
+    cache_key = _cache_key(class_min, class_max, include_previous_vocab)
+    cached = _pop_cached_question(conn, cache_key)
+    if cached is not None:
+        _debug_log("C1", "app/services/practice.py:generate_question", "cache_hit", {"cache_key": cache_key})
+        remaining = _cache_available_count(conn, cache_key)
+        if remaining <= CACHE_LOW_WATERMARK:
+            _schedule_async_refill(
+                cache_key=cache_key,
+                class_min=class_min,
+                class_max=class_max,
+                include_previous_vocab=include_previous_vocab,
             )
-            continue
-        attempt += 1
-        _debug_log(
-            "H7",
-            "app/services/practice.py:generate_question",
-            "generation_attempt_result",
-            {"attempt": current_attempt, "total_calls": total_calls, "sentence": ja},
-        )
-        result = _run_validators(ja, ctx)
-        if result.ok:
-            return data
-        if result.category == "naturalness":
-            seen_bad.append(f"{ja}（不自然：{result.error}）")
-            regen_msg = _build_retry_message(
-                ctx.base_user_message,
-                seen_bad,
-                reason=result.error,
-                category=result.category,
+        return cached
+
+    _debug_log("C2", "app/services/practice.py:generate_question", "cache_miss", {"cache_key": cache_key})
+    _refill_cache(conn, cache_key, ctx, config, class_min, class_max, include_previous_vocab, target_size=CACHE_TARGET_SIZE)
+    cached = _pop_cached_question(conn, cache_key)
+    if cached is not None:
+        return cached
+
+    # Last fallback: generate one synchronously.
+    return _generate_one_valid_question(ctx, config)
+
+
+def _schedule_async_refill(
+    *,
+    cache_key: str,
+    class_min: int,
+    class_max: int,
+    include_previous_vocab: bool,
+) -> None:
+    with _cache_refill_guard:
+        if cache_key in _cache_refill_inflight:
+            _debug_log("C7", "app/services/practice.py:_schedule_async_refill", "skip_refill_inflight", {"cache_key": cache_key})
+            return
+        _cache_refill_inflight.add(cache_key)
+
+    app = current_app._get_current_object()
+
+    def _worker() -> None:
+        # region agent log
+        try:
+            with app.app_context():
+                conn = sqlite3.connect(str(app.config["DB_PATH"]))
+                conn.row_factory = sqlite3.Row
+                cfg = GenerationConfig()
+                ctx = _build_generation_context(
+                    conn=conn,
+                    class_min=class_min,
+                    class_max=class_max,
+                    include_previous_vocab=include_previous_vocab,
+                )
+                _refill_cache(
+                    conn,
+                    cache_key,
+                    ctx,
+                    cfg,
+                    class_min,
+                    class_max,
+                    include_previous_vocab,
+                    target_size=CACHE_TARGET_SIZE,
+                )
+                conn.close()
+                _debug_log("C8", "app/services/practice.py:_schedule_async_refill", "async_refill_done", {"cache_key": cache_key})
+        except Exception as e:  # noqa: BLE001
+            _debug_log(
+                "C8",
+                "app/services/practice.py:_schedule_async_refill",
+                "async_refill_failed",
+                {"cache_key": cache_key, "error": str(e)},
             )
-            last_error = f"unnatural: {result.error}"
-            continue
-        _debug_log(
-            "H6",
-            "app/services/practice.py:generate_question",
-            "validation_failed",
-            {"attempt": current_attempt, "total_calls": total_calls, "sentence": ja, "error": result.error},
-        )
-        last_error = result.error
-        seen_bad.append(ja)
-        regen_msg = _build_retry_message(
-            ctx.base_user_message,
-            seen_bad,
-            reason=result.error,
-            category=result.category,
-        )
-    if total_calls >= config.max_total_calls and last_error == "generator repeated a previously rejected sentence":
-        raise ValueError("Generated sentence failed validation repeatedly: model kept repeating rejected outputs")
-    raise ValueError(f"Generated sentence failed validation repeatedly: {last_error}")
+        finally:
+            with _cache_refill_guard:
+                _cache_refill_inflight.discard(cache_key)
+        # endregion
+
+    threading.Thread(target=_worker, name=f"cache-refill-{cache_key}", daemon=True).start()
 
 
 def _build_generation_context(
@@ -251,6 +247,11 @@ def _build_generation_context(
         "请生成一道「日译中」练习题：给一句日语，让学生翻译成中文。\n"
         "硬性要求：如果你的候选句有任何不自然风险，请重写，直到自然为止。"
     )
+    if "V(ます), V(ません), V(ました), V(ませんでした)" in structures_summary:
+        base_user_message += (
+            "\n附加要求：本题若使用动词礼貌体，请优先尝试 Vません / Vました / Vませんでした，"
+            "避免总是只用 Vます。"
+        )
     return GenerationContext(
         pack=pack,
         base_user_message=base_user_message,
@@ -260,6 +261,255 @@ def _build_generation_context(
         avoid_block=avoid_block,
         structure_balance_block=structure_balance_block,
         token_summary=summary,
+    )
+
+
+def _cache_key(class_min: int, class_max: int, include_previous_vocab: bool) -> str:
+    return f"{class_min}:{class_max}:{1 if include_previous_vocab else 0}"
+
+
+def _pop_cached_question(conn: sqlite3.Connection, cache_key: str) -> dict[str, Any] | None:
+    row = conn.execute(
+        """
+        SELECT id, question_json
+        FROM question_cache
+        WHERE cache_key = ? AND used = 0
+        ORDER BY id ASC
+        LIMIT 1
+        """,
+        (cache_key,),
+    ).fetchone()
+    if not row:
+        return None
+    row_id = row["id"] if isinstance(row, sqlite3.Row) else row[0]
+    raw = row["question_json"] if isinstance(row, sqlite3.Row) else row[1]
+    conn.execute("UPDATE question_cache SET used = 1 WHERE id = ?", (row_id,))
+    conn.commit()
+    return json.loads(raw)
+
+
+def _cache_available_count(conn: sqlite3.Connection, cache_key: str) -> int:
+    row = conn.execute(
+        "SELECT COUNT(*) AS c FROM question_cache WHERE cache_key = ? AND used = 0",
+        (cache_key,),
+    ).fetchone()
+    return int(row["c"] if isinstance(row, sqlite3.Row) else row[0])
+
+
+def _insert_cached_question(
+    conn: sqlite3.Connection,
+    cache_key: str,
+    *,
+    class_min: int,
+    class_max: int,
+    include_previous_vocab: bool,
+    payload: dict[str, Any],
+) -> None:
+    sentence = str(payload.get("japanese_sentence") or "").strip()
+    if sentence and _cache_has_sentence(conn, cache_key, sentence):
+        _debug_log(
+            "C6",
+            "app/services/practice.py:_insert_cached_question",
+            "cache_insert_skipped_duplicate",
+            {"cache_key": cache_key, "sentence": sentence},
+        )
+        return
+    conn.execute(
+        """
+        INSERT INTO question_cache
+        (cache_key, class_min, class_max, include_previous_vocab, question_json, used)
+        VALUES (?, ?, ?, ?, ?, 0)
+        """,
+        (
+            cache_key,
+            class_min,
+            class_max,
+            1 if include_previous_vocab else 0,
+            json.dumps(payload, ensure_ascii=False),
+        ),
+    )
+    conn.commit()
+
+
+def _cache_has_sentence(conn: sqlite3.Connection, cache_key: str, sentence: str) -> bool:
+    row = conn.execute(
+        """
+        SELECT question_json
+        FROM question_cache
+        WHERE cache_key = ? AND used = 0
+        ORDER BY id DESC
+        LIMIT 50
+        """,
+        (cache_key,),
+    ).fetchall()
+    for r in row:
+        raw = r["question_json"] if isinstance(r, sqlite3.Row) else r[0]
+        try:
+            obj = json.loads(raw)
+        except Exception:
+            continue
+        if str(obj.get("japanese_sentence") or "").strip() == sentence:
+            return True
+    return False
+
+
+def _refill_cache(
+    conn: sqlite3.Connection,
+    cache_key: str,
+    ctx: GenerationContext,
+    config: GenerationConfig,
+    class_min: int,
+    class_max: int,
+    include_previous_vocab: bool,
+    *,
+    target_size: int,
+) -> None:
+    available = _cache_available_count(conn, cache_key)
+    missing = max(0, target_size - available)
+    if missing == 0:
+        return
+    _debug_log(
+        "C3",
+        "app/services/practice.py:_refill_cache",
+        "cache_refill_start",
+        {"cache_key": cache_key, "available": available, "missing": missing},
+    )
+    # Keep bounded to avoid long waits if model quality is poor.
+    max_trials = missing * 6
+    inserted = 0
+    recent_generated: list[str] = []
+    for _ in range(max_trials):
+        if inserted >= missing:
+            break
+        try:
+            q = _generate_one_valid_question_with_recent(ctx, config, recent_generated=recent_generated[-3:])
+        except Exception as e:  # noqa: BLE001
+            _debug_log("C4", "app/services/practice.py:_refill_cache", "cache_refill_attempt_failed", {"error": str(e)})
+            continue
+        recent_generated.append(str(q.get("japanese_sentence") or "").strip())
+        _insert_cached_question(
+            conn,
+            cache_key,
+            class_min=class_min,
+            class_max=class_max,
+            include_previous_vocab=include_previous_vocab,
+            payload=q,
+        )
+        inserted += 1
+    _debug_log(
+        "C5",
+        "app/services/practice.py:_refill_cache",
+        "cache_refill_done",
+        {"cache_key": cache_key, "inserted": inserted, "target_missing": missing},
+    )
+
+
+def _generate_one_valid_question(ctx: GenerationContext, config: GenerationConfig) -> dict[str, Any]:
+    return _generate_one_valid_question_with_recent(ctx, config, recent_generated=[])
+
+
+def _generate_one_valid_question_with_recent(
+    ctx: GenerationContext,
+    config: GenerationConfig,
+    *,
+    recent_generated: list[str],
+) -> dict[str, Any]:
+    required = ("japanese_sentence", "hint", "reference_translation")
+    regen_msg = _compose_generation_user_message(ctx.base_user_message, recent_generated)
+    seen_bad: list[str] = []
+    last_error = "unknown"
+    attempt = 0
+    total_calls = 0
+    while attempt < config.max_attempts and total_calls < config.max_total_calls:
+        total_calls += 1
+        current_attempt = attempt + 1
+        data = chat_json(
+            system=GENERATOR_SYSTEM,
+            user=regen_msg,
+            temperature=(config.first_attempt_temperature if current_attempt == 1 else config.retry_temperature),
+            max_retries=config.chat_retries_per_attempt,
+        )
+        for k in required:
+            if k not in data:
+                raise KeyError(f"Missing key in generator JSON: {k}")
+        ja = str(data["japanese_sentence"]).strip()
+        if ja in seen_bad:
+            last_error = "generator repeated a previously rejected sentence"
+            regen_msg = (
+                _compose_generation_user_message(ctx.base_user_message, recent_generated)
+                + "\n\n你重复了已判定不合格的句子，禁止再次输出以下句子：\n"
+                + "\n".join(f"- {s}" for s in seen_bad[-3:])
+                + "\n请输出一个全新句子，且主语和动词都必须不同。"
+            )
+            continue
+        attempt += 1
+        _debug_log(
+            "H7",
+            "app/services/practice.py:_generate_one_valid_question",
+            "generation_attempt_result",
+            {"attempt": current_attempt, "total_calls": total_calls, "sentence": ja},
+        )
+        result = _run_validators(ja, ctx)
+        if result.ok:
+            current_app.logger.info(
+                "question_candidate success attempt=%s total_calls=%s sentence=%s",
+                current_attempt,
+                total_calls,
+                ja,
+            )
+            return data
+        if result.category == "naturalness":
+            current_app.logger.info(
+                "question_candidate fail attempt=%s total_calls=%s category=naturalness reason=%s sentence=%s",
+                current_attempt,
+                total_calls,
+                result.error,
+                ja,
+            )
+            seen_bad.append(f"{ja}（不自然：{result.error}）")
+            regen_msg = _build_retry_message(
+                _compose_generation_user_message(ctx.base_user_message, recent_generated),
+                seen_bad,
+                reason=result.error,
+                category=result.category,
+            )
+            last_error = f"unnatural: {result.error}"
+            continue
+        _debug_log(
+            "H6",
+            "app/services/practice.py:_generate_one_valid_question",
+            "validation_failed",
+            {"attempt": current_attempt, "total_calls": total_calls, "sentence": ja, "error": result.error},
+        )
+        current_app.logger.info(
+            "question_candidate fail attempt=%s total_calls=%s category=%s reason=%s sentence=%s",
+            current_attempt,
+            total_calls,
+            result.category,
+            result.error,
+            ja,
+        )
+        last_error = result.error
+        seen_bad.append(ja)
+        regen_msg = _build_retry_message(
+            _compose_generation_user_message(ctx.base_user_message, recent_generated),
+            seen_bad,
+            reason=result.error,
+            category=result.category,
+        )
+    if total_calls >= config.max_total_calls and last_error == "generator repeated a previously rejected sentence":
+        raise ValueError("Generated sentence failed validation repeatedly: model kept repeating rejected outputs")
+    raise ValueError(f"Generated sentence failed validation repeatedly: {last_error}")
+
+
+def _compose_generation_user_message(base_user_message: str, recent_generated: list[str]) -> str:
+    if not recent_generated:
+        return base_user_message
+    return (
+        base_user_message
+        + "\n\n最近已生成句子（本轮缓存，避免复用）：\n"
+        + "\n".join(f"- {s}" for s in recent_generated[-3:])
+        + "\n本次请避免复用以上句子的主语、时间词和动词组合。"
     )
 
 
@@ -374,7 +624,7 @@ def _load_structures_summary(class_min: int, class_max: int) -> str:
     if not isinstance(class_items, list):
         return "（句型配置格式无效）"
 
-    lines: list[str] = []
+    lines: list[tuple[int, int, str]] = []
     for cls in class_items:
         if not isinstance(cls, dict):
             continue
@@ -396,12 +646,18 @@ def _load_structures_summary(class_min: int, class_max: int) -> str:
                 continue
             meaning = str(item.get("meaning") or "").strip()
             note = str(item.get("notes") or "").strip()
+            importance_raw = item.get("importance", 1)
+            try:
+                importance = int(importance_raw)
+            except (TypeError, ValueError):
+                importance = 1
+            importance = max(0, min(3, importance))
             entry = f"[第{class_no}课] {pattern}"
             if meaning:
                 entry += f"（{meaning}）"
             if note:
                 entry += f"；备注：{note}"
-            lines.append(entry)
+            lines.append((importance, class_no, entry))
 
     if not lines:
         _debug_log(
@@ -411,13 +667,18 @@ def _load_structures_summary(class_min: int, class_max: int) -> str:
             {"class_min": class_min, "class_max": class_max},
         )
         return "（当前课次没有启用句型，请仅用已学词汇造最基础句）"
+    ordered = [entry for _imp, _cls, entry in sorted(lines, key=lambda x: (-x[0], x[1], x[2]))]
     _debug_log(
         "H2",
         "app/services/practice.py:_load_structures_summary",
         "structures_loaded",
-        {"line_count": len(lines), "class_min": class_min, "class_max": class_max},
+        {
+            "line_count": len(ordered),
+            "class_min": class_min,
+            "class_max": class_max,
+        },
     )
-    return "\n".join(lines)
+    return "\n".join(ordered)
 
 
 def _recent_avoidance_block(conn: sqlite3.Connection) -> str:

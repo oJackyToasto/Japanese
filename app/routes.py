@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import json
 import sqlite3
-import time
-import uuid
 
 from flask import (
     Blueprint,
@@ -26,26 +24,7 @@ bp = Blueprint("main", __name__, url_prefix="")
 
 
 def _debug_log(hypothesis_id: str, location: str, message: str, data: dict) -> None:
-    # region agent log
-    try:
-        payload = {
-            "id": f"log_{int(time.time() * 1000)}_{uuid.uuid4().hex[:8]}",
-            "runId": "pre-fix",
-            "hypothesisId": hypothesis_id,
-            "location": location,
-            "message": message,
-            "data": data,
-            "timestamp": int(time.time() * 1000),
-        }
-        from flask import current_app
-
-        log_path = current_app.config["REPO_ROOT"] / ".cursor" / "debug.log"
-        log_path.parent.mkdir(parents=True, exist_ok=True)
-        with log_path.open("a", encoding="utf-8") as f:
-            f.write(json.dumps(payload, ensure_ascii=False) + "\n")
-    except Exception:
-        pass
-    # endregion
+    return
 
 
 def _as_bool(value: object) -> bool:
@@ -136,8 +115,22 @@ def generate():
             include_previous_vocab=include_previous_vocab,
         )
     except Exception as e:  # noqa: BLE001
+        current_app.logger.warning(
+            "question_generation failed class_min=%s class_max=%s include_previous_vocab=%s error=%s",
+            class_min,
+            class_max,
+            include_previous_vocab,
+            e,
+        )
         flash(f"出题失败：{e}", "error")
         return redirect(url_for("main.index"))
+    current_app.logger.info(
+        "question_generation success class_min=%s class_max=%s include_previous_vocab=%s sentence=%s",
+        class_min,
+        class_max,
+        include_previous_vocab,
+        str(data.get("japanese_sentence") or ""),
+    )
 
     session["current_question"] = {
         "japanese_sentence": data["japanese_sentence"],

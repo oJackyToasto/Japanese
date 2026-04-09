@@ -44,8 +44,22 @@
     if (items.includes(previous)) fileSelect.value = previous;
   }
 
+  function extractVocabWords(data) {
+    if (Array.isArray(data.words)) return data.words;
+    const words = [];
+    Object.keys(data || {}).forEach(function (key) {
+      if (!/^class\d+/i.test(key)) return;
+      const entries = data[key];
+      if (!Array.isArray(entries)) return;
+      entries.forEach(function (entry) {
+        words.push(entry);
+      });
+    });
+    return words;
+  }
+
   function renderVocabs(data) {
-    const words = Array.isArray(data.words) ? data.words : [];
+    const words = extractVocabWords(data);
     const table = document.createElement("table");
     table.className = "dict-table";
     table.innerHTML =

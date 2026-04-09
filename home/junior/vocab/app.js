@@ -75,6 +75,20 @@
     return shuffleArray(cards);
   }
 
+  function extractVocabWords(data) {
+    if (Array.isArray(data.words)) return data.words;
+    const words = [];
+    Object.keys(data || {}).forEach(function (key) {
+      if (!/^class\d+/i.test(key)) return;
+      const entries = data[key];
+      if (!Array.isArray(entries)) return;
+      entries.forEach(function (entry) {
+        words.push(entry);
+      });
+    });
+    return words;
+  }
+
   function setCardContent(card) {
     frontEl.innerHTML = "";
     backEl.innerHTML = "";
@@ -117,7 +131,7 @@
 
   function rebuildDeck() {
     if (!currentClassData) return;
-    deck = buildDeck(currentClassData.words || [], { wordOnly: wordOnlyCheckbox.checked });
+    deck = buildDeck(extractVocabWords(currentClassData), { wordOnly: wordOnlyCheckbox.checked });
     deckIndex = 0;
     showingFront = true;
     cardEl.classList.remove("flipped");

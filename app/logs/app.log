@@ -844,3 +844,563 @@
 2026-04-09 17:36:31,950 INFO [app] request start GET /static/style.css
 2026-04-09 17:36:31,951 INFO [app] request end GET /static/style.css status=304 duration_ms=0
 2026-04-09 17:36:31,952 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 17:36:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:09:21,109 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:09:22,638 INFO [werkzeug] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-09 20:09:22,639 INFO [werkzeug] [33mPress CTRL+C to quit[0m
+2026-04-09 20:09:22,642 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:09:23,180 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:09:24,203 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:09:24,217 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:09:27,831 INFO [app] request start GET /
+2026-04-09 20:09:27,851 INFO [app] request end GET / status=200 duration_ms=20
+2026-04-09 20:09:27,852 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:09:27] "GET / HTTP/1.1" 200 -
+2026-04-09 20:09:27,896 INFO [app] request start GET /static/style.css
+2026-04-09 20:09:27,954 INFO [app] request end GET /static/style.css status=304 duration_ms=58
+2026-04-09 20:09:27,954 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:09:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:09:41,618 INFO [app] request start POST /generate
+2026-04-09 20:09:42,714 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:09:44,577 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:09:46,859 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:09:48,941 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:09:50,963 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:09:53,315 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:09:55,130 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:09:56,861 INFO [app] request end POST /generate status=302 duration_ms=15243
+2026-04-09 20:09:56,864 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:09:56] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:09:56,874 INFO [app] request start GET /
+2026-04-09 20:09:56,875 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 20:09:56,876 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:09:56] "GET / HTTP/1.1" 200 -
+2026-04-09 20:09:56,905 INFO [app] request start GET /static/style.css
+2026-04-09 20:09:56,906 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 20:09:56,907 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:09:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:26:52,417 INFO [app] request start POST /generate
+2026-04-09 20:26:52,943 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:26:55,406 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:26:58,497 INFO [app] request end POST /generate status=302 duration_ms=6079
+2026-04-09 20:26:58,499 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:26:58] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:26:58,512 INFO [app] request start GET /
+2026-04-09 20:26:58,514 INFO [app] request end GET / status=200 duration_ms=2
+2026-04-09 20:26:58,515 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:26:58] "GET / HTTP/1.1" 200 -
+2026-04-09 20:26:58,597 INFO [app] request start GET /static/style.css
+2026-04-09 20:26:58,598 INFO [app] request end GET /static/style.css status=304 duration_ms=2
+2026-04-09 20:26:58,598 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:26:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:28:13,949 INFO [app] request start POST /submit
+2026-04-09 20:28:14,839 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:28:16,776 INFO [app] request end POST /submit status=302 duration_ms=2826
+2026-04-09 20:28:16,780 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:28:16] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 20:28:16,805 INFO [app] request start GET /
+2026-04-09 20:28:16,807 INFO [app] request end GET / status=200 duration_ms=2
+2026-04-09 20:28:16,808 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:28:16] "GET / HTTP/1.1" 200 -
+2026-04-09 20:28:16,866 INFO [app] request start GET /static/style.css
+2026-04-09 20:28:16,867 INFO [app] request end GET /static/style.css status=304 duration_ms=0
+2026-04-09 20:28:16,868 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:28:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:30:02,849 INFO [app] request start POST /generate
+2026-04-09 20:30:03,356 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:30:06,048 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:30:08,113 INFO [app] request end POST /generate status=302 duration_ms=5264
+2026-04-09 20:30:08,115 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:30:08] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:30:08,125 INFO [app] request start GET /
+2026-04-09 20:30:08,126 INFO [app] request end GET / status=200 duration_ms=0
+2026-04-09 20:30:08,128 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:30:08] "GET / HTTP/1.1" 200 -
+2026-04-09 20:30:08,188 INFO [app] request start GET /static/style.css
+2026-04-09 20:30:08,192 INFO [app] request end GET /static/style.css status=304 duration_ms=3
+2026-04-09 20:30:08,193 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:30:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:30:17,580 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\db.py', reloading
+2026-04-09 20:30:17,833 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:30:18,359 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:30:19,401 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:30:19,417 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:30:19,528 INFO [app] request start POST /generate
+2026-04-09 20:30:20,685 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:30:23,484 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:30:25,247 INFO [app] request end POST /generate status=302 duration_ms=5718
+2026-04-09 20:30:25,248 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:30:25] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:30:25,256 INFO [app] request start GET /
+2026-04-09 20:30:25,275 INFO [app] request end GET / status=200 duration_ms=19
+2026-04-09 20:30:25,276 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:30:25] "GET / HTTP/1.1" 200 -
+2026-04-09 20:30:25,314 INFO [app] request start GET /static/style.css
+2026-04-09 20:30:25,367 INFO [app] request end GET /static/style.css status=304 duration_ms=53
+2026-04-09 20:30:25,368 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:30:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:30:27,008 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\allowed_tokens.py', reloading
+2026-04-09 20:30:27,257 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:30:27,739 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:30:28,682 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:30:28,696 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:30:32,246 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:30:32,354 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:30:32,782 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:30:33,720 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:30:33,733 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:30:47,546 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:30:47,716 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:30:48,171 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:30:49,067 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:30:49,080 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:31:12,402 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:31:12,559 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:31:12,977 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:31:13,925 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:31:13,938 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:31:22,503 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:31:22,669 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:31:23,081 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:31:24,092 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:31:24,106 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:31:41,866 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:31:42,023 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:31:42,471 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:31:43,354 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:31:43,367 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:32:22,847 INFO [app] request start POST /submit
+2026-04-09 20:32:25,153 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:32:27,514 INFO [app] request end POST /submit status=302 duration_ms=4666
+2026-04-09 20:32:27,516 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:32:27] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 20:32:27,525 INFO [app] request start GET /
+2026-04-09 20:32:27,559 INFO [app] request end GET / status=200 duration_ms=34
+2026-04-09 20:32:27,561 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:32:27] "GET / HTTP/1.1" 200 -
+2026-04-09 20:32:27,625 INFO [app] request start GET /static/style.css
+2026-04-09 20:32:27,766 INFO [app] request end GET /static/style.css status=304 duration_ms=140
+2026-04-09 20:32:27,767 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:32:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:32:48,664 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:32:49,521 INFO [werkzeug] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-09 20:32:49,522 INFO [werkzeug] [33mPress CTRL+C to quit[0m
+2026-04-09 20:32:49,524 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:32:49,864 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:32:50,697 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:32:50,710 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:32:59,662 INFO [app] request start GET /
+2026-04-09 20:32:59,674 INFO [app] request end GET / status=200 duration_ms=12
+2026-04-09 20:32:59,675 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:32:59] "GET / HTTP/1.1" 200 -
+2026-04-09 20:32:59,706 INFO [app] request start GET /static/style.css
+2026-04-09 20:32:59,760 INFO [app] request end GET /static/style.css status=304 duration_ms=54
+2026-04-09 20:32:59,761 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:32:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:33:00,588 INFO [app] request start GET /
+2026-04-09 20:33:00,590 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 20:33:00,590 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:33:00] "GET / HTTP/1.1" 200 -
+2026-04-09 20:33:00,625 INFO [app] request start GET /static/style.css
+2026-04-09 20:33:00,627 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 20:33:00,627 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:33:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:33:04,154 INFO [app] request start POST /generate
+2026-04-09 20:33:05,195 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:07,275 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:09,390 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:11,133 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:13,145 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:15,739 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:18,125 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:20,054 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:21,859 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:23,841 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:26,224 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:28,551 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:30,654 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:32,274 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:34,576 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:37,032 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:39,094 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:41,999 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:44,076 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:46,526 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:48,540 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:33:49,724 INFO [app] request end POST /generate status=302 duration_ms=45569
+2026-04-09 20:33:49,725 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:33:49] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:33:49,738 INFO [app] request start GET /
+2026-04-09 20:33:49,739 INFO [app] request end GET / status=200 duration_ms=0
+2026-04-09 20:33:49,739 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:33:49] "GET / HTTP/1.1" 200 -
+2026-04-09 20:33:49,823 INFO [app] request start GET /static/style.css
+2026-04-09 20:33:49,825 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 20:33:49,826 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:33:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:36:50,317 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:36:50,465 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:36:50,867 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:36:51,878 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:36:51,891 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:37:00,951 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:37:01,054 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:37:01,467 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:37:02,428 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:37:02,443 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:37:12,633 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:37:12,741 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:37:13,089 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:37:13,930 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:37:13,942 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:37:16,895 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:37:17,740 INFO [werkzeug] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-09 20:37:17,741 INFO [werkzeug] [33mPress CTRL+C to quit[0m
+2026-04-09 20:37:17,745 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:37:18,126 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:37:19,033 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:37:19,047 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:37:19,155 INFO [app] request start GET /
+2026-04-09 20:37:19,169 INFO [app] request end GET / status=200 duration_ms=13
+2026-04-09 20:37:19,170 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:37:19] "GET / HTTP/1.1" 200 -
+2026-04-09 20:37:19,216 INFO [app] request start GET /static/style.css
+2026-04-09 20:37:19,274 INFO [app] request end GET /static/style.css status=304 duration_ms=58
+2026-04-09 20:37:19,275 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:37:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:37:20,762 INFO [app] request start POST /generate
+2026-04-09 20:37:21,737 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:37:23,652 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:37:25,575 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:37:27,523 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:37:28,661 INFO [app] request end POST /generate status=302 duration_ms=7899
+2026-04-09 20:37:28,664 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:37:28] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:37:28,681 INFO [app] request start GET /
+2026-04-09 20:37:28,683 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 20:37:28,684 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:37:28] "GET / HTTP/1.1" 200 -
+2026-04-09 20:37:28,755 INFO [app] request start GET /static/style.css
+2026-04-09 20:37:28,757 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 20:37:28,757 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:37:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:39:23,727 INFO [app] request start POST /submit
+2026-04-09 20:39:24,613 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:39:26,038 INFO [app] request end POST /submit status=302 duration_ms=2310
+2026-04-09 20:39:26,042 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:39:26] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 20:39:26,063 INFO [app] request start GET /
+2026-04-09 20:39:26,067 INFO [app] request end GET / status=200 duration_ms=4
+2026-04-09 20:39:26,069 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:39:26] "GET / HTTP/1.1" 200 -
+2026-04-09 20:39:26,134 INFO [app] request start GET /static/style.css
+2026-04-09 20:39:26,137 INFO [app] request end GET /static/style.css status=304 duration_ms=2
+2026-04-09 20:39:26,138 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:39:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:40:13,207 INFO [app] request start POST /generate
+2026-04-09 20:40:13,739 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:40:16,288 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:40:19,109 INFO [app] request end POST /generate status=302 duration_ms=5901
+2026-04-09 20:40:19,111 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:40:19] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:40:19,133 INFO [app] request start GET /
+2026-04-09 20:40:19,136 INFO [app] request end GET / status=200 duration_ms=3
+2026-04-09 20:40:19,137 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:40:19] "GET / HTTP/1.1" 200 -
+2026-04-09 20:40:19,233 INFO [app] request start GET /static/style.css
+2026-04-09 20:40:19,235 INFO [app] request end GET /static/style.css status=304 duration_ms=2
+2026-04-09 20:40:19,236 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:40:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:40:39,390 INFO [app] request start POST /generate
+2026-04-09 20:40:39,929 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:40:42,927 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:40:45,322 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:40:48,334 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:40:50,462 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:40:52,189 INFO [app] request end POST /generate status=302 duration_ms=12798
+2026-04-09 20:40:52,191 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:40:52] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:40:52,203 INFO [app] request start GET /
+2026-04-09 20:40:52,205 INFO [app] request end GET / status=200 duration_ms=2
+2026-04-09 20:40:52,207 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:40:52] "GET / HTTP/1.1" 200 -
+2026-04-09 20:40:52,283 INFO [app] request start GET /static/style.css
+2026-04-09 20:40:52,286 INFO [app] request end GET /static/style.css status=304 duration_ms=2
+2026-04-09 20:40:52,287 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:40:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:42:19,428 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:42:19,580 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:42:20,002 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:42:21,038 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:42:21,054 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:42:40,042 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:42:40,140 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:42:40,510 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:42:41,375 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:42:41,387 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:43:17,133 INFO [app] request start POST /submit
+2026-04-09 20:43:19,385 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:43:20,916 INFO [app] request end POST /submit status=302 duration_ms=3782
+2026-04-09 20:43:20,920 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:43:20] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 20:43:20,933 INFO [app] request start GET /
+2026-04-09 20:43:20,963 INFO [app] request end GET / status=200 duration_ms=30
+2026-04-09 20:43:20,964 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:43:20] "GET / HTTP/1.1" 200 -
+2026-04-09 20:43:21,009 INFO [app] request start GET /static/style.css
+2026-04-09 20:43:21,145 INFO [app] request end GET /static/style.css status=304 duration_ms=135
+2026-04-09 20:43:21,146 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:43:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:43:38,305 INFO [app] request start POST /generate
+2026-04-09 20:43:38,835 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:43:41,053 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:43:43,419 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:43:46,176 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:43:47,733 INFO [app] request end POST /generate status=302 duration_ms=9428
+2026-04-09 20:43:47,736 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:43:47] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:43:47,751 INFO [app] request start GET /
+2026-04-09 20:43:47,755 INFO [app] request end GET / status=200 duration_ms=4
+2026-04-09 20:43:47,757 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:43:47] "GET / HTTP/1.1" 200 -
+2026-04-09 20:43:47,793 INFO [app] request start GET /static/style.css
+2026-04-09 20:43:47,794 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 20:43:47,795 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:43:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:44:30,106 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:44:30,286 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:44:30,732 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:44:31,724 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:44:31,736 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:44:39,661 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:44:39,742 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:44:40,135 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:44:41,029 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:44:41,041 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:46:41,806 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:46:41,906 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:46:42,289 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:46:43,295 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:46:43,310 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:46:51,254 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 20:46:51,334 INFO [werkzeug]  * Restarting with stat
+2026-04-09 20:46:51,693 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 20:46:52,557 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 20:46:52,569 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 20:51:30,463 INFO [app] request start POST /submit
+2026-04-09 20:51:31,393 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:51:34,163 INFO [app] request end POST /submit status=302 duration_ms=3699
+2026-04-09 20:51:34,165 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:51:34] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 20:51:34,179 INFO [app] request start GET /
+2026-04-09 20:51:34,201 INFO [app] request end GET / status=200 duration_ms=22
+2026-04-09 20:51:34,201 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:51:34] "GET / HTTP/1.1" 200 -
+2026-04-09 20:51:34,237 INFO [app] request start GET /static/style.css
+2026-04-09 20:51:34,292 INFO [app] request end GET /static/style.css status=304 duration_ms=55
+2026-04-09 20:51:34,292 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:51:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:51:47,455 INFO [app] request start POST /generate
+2026-04-09 20:51:47,474 INFO [app] request end POST /generate status=302 duration_ms=18
+2026-04-09 20:51:47,475 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:51:47] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:51:47,481 INFO [app] request start GET /
+2026-04-09 20:51:47,482 INFO [app] request end GET / status=200 duration_ms=0
+2026-04-09 20:51:47,483 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:51:47] "GET / HTTP/1.1" 200 -
+2026-04-09 20:51:47,529 INFO [app] request start GET /static/style.css
+2026-04-09 20:51:47,530 INFO [app] request end GET /static/style.css status=304 duration_ms=0
+2026-04-09 20:51:47,530 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:51:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:59:42,618 INFO [app] request start POST /submit
+2026-04-09 20:59:43,748 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 20:59:45,318 INFO [app] request end POST /submit status=302 duration_ms=2700
+2026-04-09 20:59:45,322 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:59:45] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 20:59:45,353 INFO [app] request start GET /
+2026-04-09 20:59:45,357 INFO [app] request end GET / status=200 duration_ms=4
+2026-04-09 20:59:45,359 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:59:45] "GET / HTTP/1.1" 200 -
+2026-04-09 20:59:45,415 INFO [app] request start GET /static/style.css
+2026-04-09 20:59:45,418 INFO [app] request end GET /static/style.css status=304 duration_ms=2
+2026-04-09 20:59:45,419 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:59:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 20:59:46,907 INFO [app] request start POST /generate
+2026-04-09 20:59:46,955 INFO [app] request end POST /generate status=302 duration_ms=47
+2026-04-09 20:59:46,959 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:59:46] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 20:59:46,972 INFO [app] request start GET /
+2026-04-09 20:59:46,976 INFO [app] request end GET / status=200 duration_ms=3
+2026-04-09 20:59:46,978 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:59:46] "GET / HTTP/1.1" 200 -
+2026-04-09 20:59:47,040 INFO [app] request start GET /static/style.css
+2026-04-09 20:59:47,043 INFO [app] request end GET /static/style.css status=304 duration_ms=3
+2026-04-09 20:59:47,045 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 20:59:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 21:00:24,757 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 21:00:24,909 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:00:25,430 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:00:26,648 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:00:26,667 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:00:57,937 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:00:58,996 INFO [werkzeug] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-09 21:00:58,996 INFO [werkzeug] [33mPress CTRL+C to quit[0m
+2026-04-09 21:00:58,998 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:00:59,390 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:01:00,413 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:01:00,429 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:01:03,562 INFO [app] request start POST /generate
+2026-04-09 21:01:03,586 INFO [app] request end POST /generate status=302 duration_ms=23
+2026-04-09 21:01:03,587 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:03] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 21:01:03,599 INFO [app] request start GET /
+2026-04-09 21:01:03,616 INFO [app] request end GET / status=200 duration_ms=17
+2026-04-09 21:01:03,617 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:03] "GET / HTTP/1.1" 200 -
+2026-04-09 21:01:03,653 INFO [app] request start GET /static/style.css
+2026-04-09 21:01:03,704 INFO [app] request end GET /static/style.css status=304 duration_ms=50
+2026-04-09 21:01:03,705 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 21:01:09,389 INFO [app] request start POST /generate
+2026-04-09 21:01:09,434 INFO [app] request end POST /generate status=302 duration_ms=44
+2026-04-09 21:01:09,437 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:09] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 21:01:09,446 INFO [app] request start GET /
+2026-04-09 21:01:09,447 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 21:01:09,448 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:09] "GET / HTTP/1.1" 200 -
+2026-04-09 21:01:09,509 INFO [app] request start GET /static/style.css
+2026-04-09 21:01:09,513 INFO [app] request end GET /static/style.css status=304 duration_ms=3
+2026-04-09 21:01:09,516 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 21:01:10,441 INFO [app] request start POST /generate
+2026-04-09 21:01:10,489 INFO [app] request end POST /generate status=302 duration_ms=47
+2026-04-09 21:01:10,491 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:10] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 21:01:10,505 INFO [app] request start GET /
+2026-04-09 21:01:10,506 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 21:01:10,507 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:10] "GET / HTTP/1.1" 200 -
+2026-04-09 21:01:10,548 INFO [app] request start GET /static/style.css
+2026-04-09 21:01:10,550 INFO [app] request end GET /static/style.css status=304 duration_ms=2
+2026-04-09 21:01:10,551 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:01:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 21:01:12,131 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:12,585 INFO [app] request start POST /generate
+2026-04-09 21:01:13,776 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:15,916 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:16,927 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:19,486 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:19,532 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:21,969 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:22,014 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:24,598 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:24,599 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:27,372 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:27,494 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:29,842 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:30,483 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:32,882 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:32,886 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:34,874 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:35,006 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:37,559 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:37,746 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:39,798 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:40,156 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:42,064 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:42,832 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:44,775 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:45,546 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:46,877 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:47,849 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:49,030 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:51,885 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:52,884 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:55,779 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:55,793 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:58,649 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:01:58,882 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:02:00,232 INFO [app] request end POST /generate status=302 duration_ms=47647
+2026-04-09 21:02:00,237 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:02:00] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 21:02:00,264 INFO [app] request start GET /
+2026-04-09 21:02:00,270 INFO [app] request end GET / status=200 duration_ms=6
+2026-04-09 21:02:00,273 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:02:00] "GET / HTTP/1.1" 200 -
+2026-04-09 21:02:00,379 INFO [app] request start GET /static/style.css
+2026-04-09 21:02:00,384 INFO [app] request end GET /static/style.css status=304 duration_ms=5
+2026-04-09 21:02:00,385 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 21:02:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 21:02:01,697 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:02:04,675 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:02:08,412 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:02:11,928 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:02:16,199 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:02:18,791 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:02:21,904 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 21:03:32,419 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 21:03:32,598 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:03:33,084 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:03:34,268 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:03:34,289 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:03:42,362 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 21:03:42,463 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:03:42,895 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:03:43,881 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:03:43,894 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:04:09,800 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\db.py', reloading
+2026-04-09 21:04:09,954 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:04:10,432 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:04:11,487 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:04:11,501 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:08:12,935 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\routes.py', reloading
+2026-04-09 21:08:13,115 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:08:13,677 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:08:15,217 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:08:15,247 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:08:20,239 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\allowed_tokens.py', reloading
+2026-04-09 21:08:20,442 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:08:21,148 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:08:22,787 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:08:22,827 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:08:31,172 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 21:08:31,301 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:08:31,917 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:08:33,331 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:08:33,361 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:08:41,689 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\services\\practice.py', reloading
+2026-04-09 21:08:41,838 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:08:42,414 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:08:43,688 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:08:43,714 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 21:08:55,131 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\routes.py', reloading
+2026-04-09 21:08:55,241 INFO [werkzeug]  * Restarting with stat
+2026-04-09 21:08:55,673 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 21:08:56,713 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 21:08:56,726 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 22:51:21,865 INFO [app] request start GET /
+2026-04-09 22:51:21,891 INFO [app] request end GET / status=200 duration_ms=26
+2026-04-09 22:51:21,892 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:51:21] "GET / HTTP/1.1" 200 -
+2026-04-09 22:51:21,925 INFO [app] request start GET /static/style.css
+2026-04-09 22:51:21,975 INFO [app] request end GET /static/style.css status=304 duration_ms=50
+2026-04-09 22:51:21,976 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:51:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:53:34,562 INFO [app] request start POST /submit
+2026-04-09 22:53:36,670 INFO [openai._base_client] Retrying request to /chat/completions in 0.458516 seconds
+2026-04-09 22:53:37,280 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 22:53:38,598 INFO [app] request end POST /submit status=302 duration_ms=4034
+2026-04-09 22:53:38,599 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:53:38] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 22:53:38,604 INFO [app] request start GET /
+2026-04-09 22:53:38,605 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 22:53:38,606 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:53:38] "GET / HTTP/1.1" 200 -
+2026-04-09 22:53:38,636 INFO [app] request start GET /static/style.css
+2026-04-09 22:53:38,637 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 22:53:38,637 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:53:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:53:40,744 INFO [app] request start POST /generate
+2026-04-09 22:53:40,762 INFO [app] question_generation success class_min=5 class_max=5 include_previous_vocab=True sentence=ロンドンへ旅行します。
+2026-04-09 22:53:40,762 INFO [app] request end POST /generate status=302 duration_ms=17
+2026-04-09 22:53:40,763 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:53:40] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 22:53:40,768 INFO [app] request start GET /
+2026-04-09 22:53:40,769 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 22:53:40,769 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:53:40] "GET / HTTP/1.1" 200 -
+2026-04-09 22:53:40,807 INFO [app] request start GET /static/style.css
+2026-04-09 22:53:40,807 INFO [app] request end GET /static/style.css status=304 duration_ms=0
+2026-04-09 22:53:40,809 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:53:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:55:49,458 INFO [app] request start POST /submit
+2026-04-09 22:55:50,424 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 22:55:52,476 INFO [app] request end POST /submit status=302 duration_ms=3018
+2026-04-09 22:55:52,480 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:55:52] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 22:55:52,500 INFO [app] request start GET /
+2026-04-09 22:55:52,507 INFO [app] request end GET / status=200 duration_ms=7
+2026-04-09 22:55:52,511 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:55:52] "GET / HTTP/1.1" 200 -
+2026-04-09 22:55:52,564 INFO [app] request start GET /static/style.css
+2026-04-09 22:55:52,567 INFO [app] request end GET /static/style.css status=304 duration_ms=2
+2026-04-09 22:55:52,569 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:55:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:55:57,852 INFO [app] request start POST /generate
+2026-04-09 22:55:57,876 INFO [app] question_generation success class_min=5 class_max=5 include_previous_vocab=True sentence=あそこはコンビニです。
+2026-04-09 22:55:57,878 INFO [app] request end POST /generate status=302 duration_ms=26
+2026-04-09 22:55:57,880 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:55:57] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 22:55:57,893 INFO [app] request start GET /
+2026-04-09 22:55:57,896 INFO [app] request end GET / status=200 duration_ms=2
+2026-04-09 22:55:57,897 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:55:57] "GET / HTTP/1.1" 200 -
+2026-04-09 22:55:57,951 INFO [app] request start GET /static/style.css
+2026-04-09 22:55:57,954 INFO [app] request end GET /static/style.css status=304 duration_ms=3
+2026-04-09 22:55:57,955 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:55:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:56:39,863 INFO [app] request start POST /submit
+2026-04-09 22:56:42,995 INFO [openai._base_client] Retrying request to /chat/completions in 0.430914 seconds
+2026-04-09 22:56:43,589 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 22:56:45,532 INFO [app] request end POST /submit status=302 duration_ms=5668
+2026-04-09 22:56:45,536 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:56:45] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 22:56:45,549 INFO [app] request start GET /
+2026-04-09 22:56:45,552 INFO [app] request end GET / status=200 duration_ms=2
+2026-04-09 22:56:45,554 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:56:45] "GET / HTTP/1.1" 200 -
+2026-04-09 22:56:45,607 INFO [app] request start GET /static/style.css
+2026-04-09 22:56:45,610 INFO [app] request end GET /static/style.css status=304 duration_ms=3
+2026-04-09 22:56:45,612 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:56:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:57:10,071 INFO [werkzeug]  * Detected change in 'd:\\ObsidianVals\\SCHOOL\\SCHOOL\\日语\\app\\routes.py', reloading
+2026-04-09 22:57:10,234 INFO [werkzeug]  * Restarting with stat
+2026-04-09 22:57:10,889 INFO [app] app logging initialized at D:\ObsidianVals\SCHOOL\SCHOOL\日语\app\logs\app.log
+2026-04-09 22:57:11,825 WARNING [werkzeug]  * Debugger is active!
+2026-04-09 22:57:11,840 INFO [werkzeug]  * Debugger PIN: 640-388-487
+2026-04-09 22:57:28,872 INFO [app] request start POST /generate
+2026-04-09 22:57:28,884 INFO [app] question_generation success class_min=5 class_max=5 include_previous_vocab=True sentence=店員は毎朝七時に起きます。
+2026-04-09 22:57:28,885 INFO [app] request end POST /generate status=302 duration_ms=12
+2026-04-09 22:57:28,886 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:57:28] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 22:57:28,893 INFO [app] request start GET /
+2026-04-09 22:57:28,908 INFO [app] request end GET / status=200 duration_ms=14
+2026-04-09 22:57:28,909 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:57:28] "GET / HTTP/1.1" 200 -
+2026-04-09 22:57:28,950 INFO [app] request start GET /static/style.css
+2026-04-09 22:57:29,002 INFO [app] request end GET /static/style.css status=304 duration_ms=51
+2026-04-09 22:57:29,002 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:57:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:58:40,922 INFO [app] request start POST /submit
+2026-04-09 22:58:42,041 INFO [httpx] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-04-09 22:58:43,957 INFO [app] request end POST /submit status=302 duration_ms=3034
+2026-04-09 22:58:43,958 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:58:43] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2026-04-09 22:58:43,965 INFO [app] request start GET /
+2026-04-09 22:58:43,966 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 22:58:43,967 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:58:43] "GET / HTTP/1.1" 200 -
+2026-04-09 22:58:43,997 INFO [app] request start GET /static/style.css
+2026-04-09 22:58:43,998 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 22:58:43,999 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:58:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-04-09 22:58:46,394 INFO [app] request start POST /generate
+2026-04-09 22:58:46,403 INFO [app] question_generation success class_min=5 class_max=5 include_previous_vocab=True sentence=店員は毎日七時から働きます。
+2026-04-09 22:58:46,404 INFO [app] request end POST /generate status=302 duration_ms=9
+2026-04-09 22:58:46,405 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:58:46] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-09 22:58:46,413 INFO [app] request start GET /
+2026-04-09 22:58:46,414 INFO [app] request end GET / status=200 duration_ms=1
+2026-04-09 22:58:46,415 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:58:46] "GET / HTTP/1.1" 200 -
+2026-04-09 22:58:46,458 INFO [app] request start GET /static/style.css
+2026-04-09 22:58:46,459 INFO [app] request end GET /static/style.css status=304 duration_ms=1
+2026-04-09 22:58:46,459 INFO [werkzeug] 127.0.0.1 - - [09/Apr/2026 22:58:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

@@ -41,8 +41,20 @@ CREATE TABLE IF NOT EXISTS practice_attempts (
     correct INTEGER NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS question_cache (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    cache_key TEXT NOT NULL,
+    class_min INTEGER NOT NULL,
+    class_max INTEGER NOT NULL,
+    include_previous_vocab INTEGER NOT NULL,
+    question_json TEXT NOT NULL,
+    used INTEGER NOT NULL DEFAULT 0
+);
+
 CREATE INDEX IF NOT EXISTS idx_vocab_class ON vocab_items(class_no);
 CREATE INDEX IF NOT EXISTS idx_attempts_created ON practice_attempts(created_at);
+CREATE INDEX IF NOT EXISTS idx_cache_lookup ON question_cache(cache_key, used, id);
 """
 
 

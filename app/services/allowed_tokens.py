@@ -2,14 +2,9 @@
 
 from __future__ import annotations
 
-import json
 import re
 import sqlite3
-import time
-import uuid
 from dataclasses import dataclass
-
-from flask import current_app
 
 from app.services.verb_masu import masu_form
 
@@ -69,27 +64,12 @@ GRAMMAR_TOKENS = frozenset(
 class AllowedPack:
     tokens: list[str]
     sorted_by_len: list[str]
+    prompt_tokens: list[str]
+    prompt_sorted_by_len: list[str]
 
 
 def _debug_log(hypothesis_id: str, location: str, message: str, data: dict) -> None:
-    # region agent log
-    try:
-        payload = {
-            "id": f"log_{int(time.time() * 1000)}_{uuid.uuid4().hex[:8]}",
-            "runId": "debug-3",
-            "hypothesisId": hypothesis_id,
-            "location": location,
-            "message": message,
-            "data": data,
-            "timestamp": int(time.time() * 1000),
-        }
-        log_path = current_app.config["REPO_ROOT"] / ".cursor" / "debug.log"
-        log_path.parent.mkdir(parents=True, exist_ok=True)
-        with log_path.open("a", encoding="utf-8") as f:
-            f.write(json.dumps(payload, ensure_ascii=False) + "\n")
-    except Exception:
-        pass
-    # endregion
+    return
 
 
 def _normalized_variants(token: str) -> set[str]:
@@ -109,6 +89,7 @@ def load_allowed_pack(
 ) -> AllowedPack:
     """Build allowed token pack from class range, with common verb forms."""
     tokens: set[str] = set(GRAMMAR_TOKENS)
+    prompt_tokens: set[str] = set(GRAMMAR_TOKENS)
     vocab_rows = 0
     verb_rows = 0
 
@@ -122,7 +103,9 @@ def load_allowed_pack(
         vocab_rows += 1
         w = (row["word"] or "").strip()
         if w:
-            tokens.update(_normalized_variants(w))
+            variants = _normalized_variants(w)
+            tokens.update(variants)
+            prompt_tokens.update(variants)
         sp = (row["spelling"] or "").strip() if row["spelling"] else ""
         if sp:
             tokens.update(_normalized_variants(sp))
@@ -140,12 +123,19 @@ def load_allowed_pack(
         vt = int(row["verb_type"])
         disp = (row["verb_display"] or "").strip() if row["verb_display"] else ""
         if disp:
-            tokens.update(_normalized_variants(disp))
-        tokens.update(_normalized_variants(lemma))
-        tokens.update(_normalized_variants(masu_form(lemma, vt)))
+            variants = _normalized_variants(disp)
+            tokens.update(variants)
+            prompt_tokens.update(variants)
+        lemma_variants = _normalized_variants(lemma)
+        masu_variants = _normalized_variants(masu_form(lemma, vt))
+        tokens.update(lemma_variants)
+        tokens.update(masu_variants)
+        prompt_tokens.update(lemma_variants)
+        prompt_tokens.update(masu_variants)
 
     # Longest-first greedy segmentation
     lst = sorted(tokens, key=len, reverse=True)
+    prompt_lst = sorted(prompt_tokens, key=len, reverse=True)
     _debug_log(
         "D1",
         "app/services/allowed_tokens.py:load_allowed_pack",
@@ -161,9 +151,15 @@ def load_allowed_pack(
             "has_shichiji": "七時" in tokens,
             "has_benkyo_shimasu": "勉強します" in tokens,
             "token_count": len(tokens),
+            "prompt_token_count": len(prompt_tokens),
         },
     )
-    return AllowedPack(tokens=list(tokens), sorted_by_len=lst)
+    return AllowedPack(
+        tokens=list(tokens),
+        sorted_by_len=lst,
+        prompt_tokens=list(prompt_tokens),
+        prompt_sorted_by_len=prompt_lst,
+    )
 
 
 def can_segment(sentence: str, pack: AllowedPack) -> tuple[bool, str]:
@@ -205,9 +201,9 @@ def can_segment(sentence: str, pack: AllowedPack) -> tuple[bool, str]:
 def allowed_summary_for_prompt(pack: AllowedPack, max_items: int = 200) -> str:
     """Subset of tokens for prompt size; prefer longer multi-char items."""
     # Exclude single-char grammar except common particles we want explicit
-    candidates = [t for t in pack.sorted_by_len if len(t) >= 2]
+    candidates = [t for t in pack.prompt_sorted_by_len if len(t) >= 2]
     # Still include single kana particles that are in GRAMMAR_TOKENS
-    singles = [t for t in pack.sorted_by_len if len(t) == 1 and t in GRAMMAR_TOKENS]
+    singles = [t for t in pack.prompt_sorted_by_len if len(t) == 1 and t in GRAMMAR_TOKENS]
     merged = candidates + singles
     seen: set[str] = set()
     out: list[str] = []
