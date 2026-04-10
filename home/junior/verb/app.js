@@ -86,9 +86,10 @@
       if (includeDictionary && masu) {
         cards.push({
           frontMain: lemma,
-          frontSub: reading || "",
+          frontSub: "",
           backMain: masu,
           backSub: readingMasu || "",
+          backSubAlt: reading || "",
           backMeaning: meaning,
           backType: "dict -> masu",
         });
@@ -96,9 +97,10 @@
       if (includeMasu && masu) {
         cards.push({
           frontMain: masu,
-          frontSub: readingMasu || "",
+          frontSub: "",
           backMain: lemma,
           backSub: reading || "",
+          backSubAlt: readingMasu || "",
           backMeaning: meaning,
           backType: "masu -> dict",
         });
@@ -133,6 +135,13 @@
       bSub.className = "sub-text";
       bSub.textContent = card.backSub;
       backEl.appendChild(bSub);
+    }
+
+    if (card.backSubAlt) {
+      const bSubAlt = document.createElement("div");
+      bSubAlt.className = "sub-text";
+      bSubAlt.textContent = card.backSubAlt;
+      backEl.appendChild(bSubAlt);
     }
 
     if (card.backMeaning) {
