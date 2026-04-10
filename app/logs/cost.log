@@ -1,0 +1,116 @@
+2026-04-10 14:06:27	kind	model	prompt_tokens	completion_tokens	total_tokens
+2026-04-10 14:06:28	kind	model	prompt_tokens	completion_tokens	total_tokens
+2026-04-10 14:06:45	question_generator	deepseek-chat	2538	43	2581
+2026-04-10 14:06:47	naturalness_check	deepseek-chat	152	24	176
+2026-04-10 14:06:50	question_generator	deepseek-chat	2578	37	2615
+2026-04-10 14:06:52	naturalness_check	deepseek-chat	153	30	183
+2026-04-10 14:06:55	question_generator	deepseek-chat	2592	45	2637
+2026-04-10 14:06:58	naturalness_check	deepseek-chat	152	43	195
+2026-04-10 14:07:01	question_generator	deepseek-chat	2763	53	2816
+2026-04-10 14:07:04	naturalness_check	deepseek-chat	153	39	192
+2026-04-10 14:07:07	question_generator	deepseek-chat	2803	50	2853
+2026-04-10 14:07:10	question_generator	deepseek-chat	2749	52	2801
+2026-04-10 14:07:12	naturalness_check	deepseek-chat	156	38	194
+2026-04-10 14:07:15	question_generator	deepseek-chat	2818	45	2863
+2026-04-10 14:07:17	question_generator	deepseek-chat	2668	50	2718
+2026-04-10 14:07:20	question_generator	deepseek-chat	2668	50	2718
+2026-04-10 14:07:23	question_generator	deepseek-chat	2668	50	2718
+2026-04-10 14:07:26	question_generator	deepseek-chat	2668	50	2718
+2026-04-10 14:07:29	grade_answer	deepseek-chat	181	80	261
+2026-04-10 14:07:29	question_generator	deepseek-chat	2668	50	2718
+2026-04-10 14:07:31	question_generator	deepseek-chat	2592	45	2637
+2026-04-10 14:07:34	naturalness_check	deepseek-chat	152	54	206
+2026-04-10 14:07:37	question_generator	deepseek-chat	2785	49	2834
+2026-04-10 14:07:40	naturalness_check	deepseek-chat	153	39	192
+2026-04-10 14:07:43	question_generator	deepseek-chat	2814	50	2864
+2026-04-10 14:07:45	naturalness_check	deepseek-chat	150	24	174
+2026-04-10 14:07:48	question_generator	deepseek-chat	2603	46	2649
+2026-04-10 14:07:51	naturalness_check	deepseek-chat	154	39	193
+2026-04-10 14:07:54	question_generator	deepseek-chat	2768	57	2825
+2026-04-10 14:07:57	naturalness_check	deepseek-chat	156	38	194
+2026-04-10 14:08:00	question_generator	deepseek-chat	2813	50	2863
+2026-04-10 14:08:03	question_generator	deepseek-chat	2760	49	2809
+2026-04-10 14:08:07	question_generator	deepseek-chat	2680	58	2738
+2026-04-10 14:08:10	question_generator	deepseek-chat	2732	57	2789
+2026-04-10 14:08:13	question_generator	deepseek-chat	2681	46	2727
+2026-04-10 14:08:16	naturalness_check	deepseek-chat	153	30	183
+2026-04-10 14:08:36	grade_answer	deepseek-chat	199	32	231
+2026-04-10 14:10:37	grade_answer	deepseek-chat	174	65	239
+2026-04-10 14:14:07	grade_answer	deepseek-chat	187	35	222
+2026-04-10 14:14:20	question_generator	deepseek-chat	2484	41	2525
+2026-04-10 14:14:22	naturalness_check	deepseek-chat	153	29	182
+2026-04-10 14:14:25	question_generator	deepseek-chat	2525	40	2565
+2026-04-10 14:14:27	naturalness_check	deepseek-chat	150	24	174
+2026-04-10 14:14:30	question_generator	deepseek-chat	2536	45	2581
+2026-04-10 14:14:32	question_generator	deepseek-chat	2594	54	2648
+2026-04-10 14:14:35	question_generator	deepseek-chat	2609	53	2662
+2026-04-10 14:14:38	question_generator	deepseek-chat	2589	39	2628
+2026-04-10 14:14:41	naturalness_check	deepseek-chat	154	31	185
+2026-04-10 14:14:43	question_generator	deepseek-chat	2551	37	2588
+2026-04-10 14:14:45	question_generator	deepseek-chat	2609	41	2650
+2026-04-10 14:14:48	naturalness_check	deepseek-chat	151	61	212
+2026-04-10 14:14:51	question_generator	deepseek-chat	2769	37	2806
+2026-04-10 14:14:53	question_generator	deepseek-chat	2602	50	2652
+2026-04-10 14:14:56	question_generator	deepseek-chat	2689	41	2730
+2026-04-10 14:14:59	question_generator	deepseek-chat	2692	44	2736
+2026-04-10 14:15:01	naturalness_check	deepseek-chat	154	31	185
+2026-04-10 14:15:04	grade_answer	deepseek-chat	185	33	218
+2026-04-10 14:15:52	grade_answer	deepseek-chat	185	44	229
+2026-04-10 14:15:57	question_generator	deepseek-chat	2478	37	2515
+2026-04-10 14:15:59	naturalness_check	deepseek-chat	148	24	172
+2026-04-10 14:16:01	question_generator	deepseek-chat	2514	45	2559
+2026-04-10 14:16:05	question_generator	deepseek-chat	2578	33	2611
+2026-04-10 14:16:07	naturalness_check	deepseek-chat	148	29	177
+2026-04-10 14:16:10	question_generator	deepseek-chat	2523	53	2576
+2026-04-10 14:16:13	question_generator	deepseek-chat	2587	38	2625
+2026-04-10 14:16:16	naturalness_check	deepseek-chat	149	29	178
+2026-04-10 14:16:19	question_generator	deepseek-chat	2533	43	2576
+2026-04-10 14:16:21	naturalness_check	deepseek-chat	153	24	177
+2026-04-10 14:17:05	grade_answer	deepseek-chat	183	56	239
+2026-04-10 14:20:03	kind	model	prompt_tokens	completion_tokens	total_tokens
+2026-04-10 14:20:07	kind	model	prompt_tokens	completion_tokens	total_tokens	result
+2026-04-10 14:20:18	kind	model	prompt_tokens	completion_tokens	total_tokens	result
+# About 10 submissions, some were skipped.
+2026-04-10 14:22:29	grade_answer	deepseek-chat	191	78	269	is_correct=False correction=学校的图书室几点结束？
+2026-04-10 14:24:14	grade_answer	deepseek-chat	176	33	209	is_correct=True correction=
+2026-04-10 14:25:00	grade_answer	deepseek-chat	179	33	212	is_correct=True correction=
+2026-04-10 14:25:10	question_generator	deepseek-chat	2463	50	2513	スミスさんは来週火曜日に郵便局へ行きます。
+2026-04-10 14:25:13	question_generator	deepseek-chat	2530	52	2582	スミスさんは来週火曜日に郵便局へ行きますか。
+2026-04-10 14:25:16	question_generator	deepseek-chat	2551	47	2598	スミスさんは来週火曜日に郵便局へ行きますか。
+2026-04-10 14:25:18	question_generator	deepseek-chat	2530	44	2574	郵便局の近くに図書室があります。
+2026-04-10 14:25:21	naturalness_check	deepseek-chat	153	29	182	is_natural=True reason=句子自然，助词搭配正确，语义通顺，符合N5水平。
+2026-04-10 14:25:25	question_generator	deepseek-chat	2504	51	2555	スミスさんは来週火曜日に図書室で勉強します。
+2026-04-10 14:25:27	naturalness_check	deepseek-chat	158	29	187	is_natural=True reason=句子自然，助词搭配正确，语义通顺，符合N5水平。
+2026-04-10 14:25:31	question_generator	deepseek-chat	2523	113	2636	再来週の火曜日にスミスさんは郵便局へ行きます。
+2026-04-10 14:25:34	question_generator	deepseek-chat	2591	51	2642	スミスさんは来週火曜日に郵便局で働きます。
+2026-04-10 14:25:36	naturalness_check	deepseek-chat	158	29	187	is_natural=True reason=句子自然，助词搭配正确，语义通顺，符合N5水平。
+2026-04-10 14:25:39	question_generator	deepseek-chat	2542	46	2588	再来週の火曜日に郵便局へ行きます。
+2026-04-10 14:25:41	question_generator	deepseek-chat	2605	53	2658	スミスさんは再来週火曜日に郵便局で働きます。
+2026-04-10 14:25:44	naturalness_check	deepseek-chat	158	38	196	is_natural=True reason=句子语义通顺，助词搭配合理，表达史密斯先生在下下周星期二在邮局工作，符合N5水平。
+# Notice: seems to have some problem with repetition (Currently Detailed?)
+# Running as minimal
+2026-04-10 14:28:03	kind	model	prompt_tokens	completion_tokens	total_tokens	result
+2026-04-10 14:28:04	kind	model	prompt_tokens	completion_tokens	total_tokens	result
+2026-04-10 14:28:16	question_generator	deepseek-chat	2472	44	2516	図書館の近くに病院があります。
+2026-04-10 14:28:18	question_generator	deepseek-chat	2461	38	2499	冷蔵庫の中にビールがあります。
+2026-04-10 14:28:18	naturalness_check	deepseek-chat	151	29	180	is_natural=True reason=句子自然，助词搭配正确，语义通顺，符合N5水平。
+2026-04-10 14:28:20	naturalness_check	deepseek-chat	150	29	179	is_natural=True reason=句子自然，助词搭配正确，语义通顺，符合N5水平。
+2026-04-10 14:28:21	question_generator	deepseek-chat	2511	42	2553	会社の食堂は何時に終わりますか。
+2026-04-10 14:28:23	question_generator	deepseek-chat	2499	41	2540	展覧会は何時に終わりますか。
+2026-04-10 14:28:24	naturalness_check	deepseek-chat	152	34	186	is_natural=True reason=句子自然通顺，助词搭配合理，询问公司食堂的结束时间，符合N5水平。
+2026-04-10 14:28:26	naturalness_check	deepseek-chat	152	30	182	is_natural=True reason=句子自然，询问展览会结束时间，助词搭配正确，语义通顺。
+2026-04-10 14:28:26	question_generator	deepseek-chat	2524	44	2568	スミスさんは毎朝七時に起きます。
+2026-04-10 14:28:28	naturalness_check	deepseek-chat	153	24	177	is_natural=True reason=句子自然，助词搭配正确，语义通顺。
+2026-04-10 14:28:29	question_generator	deepseek-chat	2512	41	2553	社員は毎朝七時に起きます。
+2026-04-10 14:28:30	naturalness_check	deepseek-chat	151	24	175	is_natural=True reason=句子自然，助词搭配正确，语义通顺。
+2026-04-10 14:28:31	question_generator	deepseek-chat	2538	46	2584	東京大学の図書室は何時に終わりますか。
+2026-04-10 14:28:33	naturalness_check	deepseek-chat	155	29	184	is_natural=True reason=句子自然，助词搭配正确，语义通顺，符合N5水平。
+2026-04-10 14:28:33	question_generator	deepseek-chat	2524	50	2574	おとといの展覧会は何時に終わりましたか。
+2026-04-10 14:28:36	question_generator	deepseek-chat	2568	48	2616	おとといの展覧会は何時に終わりましたか。
+2026-04-10 14:28:38	question_generator	deepseek-chat	2569	40	2609	金曜日のパーティは何時に始まりますか。
+2026-04-10 14:28:41	naturalness_check	deepseek-chat	155	30	185	is_natural=True reason=句子自然，询问周五派对开始时间，助词搭配正确，语义通顺。
+2026-04-10 14:28:43	question_generator	deepseek-chat	2529	33	2562	冷蔵庫の中にビールがあります。
+2026-04-10 14:28:45	naturalness_check	deepseek-chat	150	29	179	is_natural=True reason=句子自然，助词搭配正确，语义通顺，符合N5水平。
+2026-04-10 14:29:55	grade_answer	deepseek-chat	184	54	238	is_correct=False correction=图书馆附近有医院。
+2026-04-10 14:46:59	grade_answer	deepseek-chat	180	46	226	is_correct=False correction=冰箱里有啤酒。
+2026-04-10 14:49:58	grade_answer	deepseek-chat	186	42	228	is_correct=True correction=

@@ -10,21 +10,24 @@
                     "pattern": "NはNです",
                     "meaning": "A是B",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c1-s2",
                     "pattern": "NはNではありません",
                     "meaning": "A不是B",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c1-s3",
                     "pattern": "NはNですか",
                     "meaning": "A是B吗",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 }
             ]
         },
@@ -37,14 +40,16 @@
                     "pattern": "これ/それ/あれ/どれ",
                     "meaning": "这个/那个/那个/哪个",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "例如: これは本です。それも本です。",
+                    "importance": 3
                 },
                 {
                     "id": "c2-s2",
                     "pattern": "この/その/あの/どの",
                     "meaning": "这个/那个/那个/哪个",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "例如: この本は森さんのです。その本は李さんのです。",
+                    "importance": 3
                 },
                 {
                     "id": "c2-s3",
@@ -58,7 +63,8 @@
                     "pattern": "誰ですか/何ですか",
                     "meaning": "谁/什么",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 2
                 }
             ]
         },
@@ -71,28 +77,31 @@
                     "pattern": "ここ/そこ/あそこ/どこ",
                     "meaning": "这里/那里/那个地方/哪个地方",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "例如: ここはデパートです。そこもデパートです。",
+                    "importance": 3
                 },
                 {
                     "id": "c3-s2",
                     "pattern": "NはN(场所)です",
                     "meaning": "A在B场所",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c3-s3",
                     "pattern": "Nはどこですか",
                     "meaning": "A在哪里",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 3
                 },
                 {
                     "id": "c3-s4",
                     "pattern": "NもNです",
                     "meaning": "A也是B",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "例子: これは本です。それも本です。"
                 },
                 {
                     "id": "c3-s5",
@@ -158,7 +167,8 @@
                     "pattern": "Nの上/外/中/下/前/後ろ/近く",
                     "meaning": "A的上/外/中/下/前/后/近处",
                     "enabled": true,
-                    "notes": ""
+                    "notes": "",
+                    "importance": 2
                 },
                 {
                     "id": "c4-s7",

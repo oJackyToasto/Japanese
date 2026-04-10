@@ -31,6 +31,7 @@ class Config:
     DB_PATH = REPO_ROOT / "app" / "data" / "learning.db"
     LOG_DIR = REPO_ROOT / "app" / "logs"
     LOG_PATH = LOG_DIR / "app.log"
+    COST_LOG_PATH = LOG_DIR / "cost.log"
     LOG_LEVEL = os.environ.get("APP_LOG_LEVEL", "INFO")
     DEBUG = _env_bool("FLASK_DEBUG", True)
     TEMPLATES_AUTO_RELOAD = True
@@ -38,3 +39,8 @@ class Config:
     DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
     DEEPSEEK_BASE_URL = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
     DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+
+    # Question generation retries after validator failure:
+    # "detailed" = append reasons + long rewrite instructions (default).
+    # "minimal" = short instruction + banned sentences only (fewer tokens; A/B vs detailed).
+    PRACTICE_REGEN_PROMPT = os.environ.get("PRACTICE_REGEN_PROMPT", "detailed").strip().lower()

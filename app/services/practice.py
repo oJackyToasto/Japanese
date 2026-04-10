@@ -417,6 +417,8 @@ def _generate_one_valid_question_with_recent(
     required = ("japanese_sentence", "hint", "reference_translation")
     regen_msg = _compose_generation_user_message(ctx.base_user_message, recent_generated)
     seen_bad: list[str] = []
+    rejected_ja: list[str] = []
+    regen_style = _regen_prompt_style()
     last_error = "unknown"
     attempt = 0
     total_calls = 0
@@ -428,17 +430,18 @@ def _generate_one_valid_question_with_recent(
             user=regen_msg,
             temperature=(config.first_attempt_temperature if current_attempt == 1 else config.retry_temperature),
             max_retries=config.chat_retries_per_attempt,
+            usage_kind="question_generator",
         )
         for k in required:
             if k not in data:
                 raise KeyError(f"Missing key in generator JSON: {k}")
         ja = str(data["japanese_sentence"]).strip()
-        if ja in seen_bad:
+        if ja in rejected_ja:
             last_error = "generator repeated a previously rejected sentence"
             regen_msg = (
                 _compose_generation_user_message(ctx.base_user_message, recent_generated)
                 + "\n\n你重复了已判定不合格的句子，禁止再次输出以下句子：\n"
-                + "\n".join(f"- {s}" for s in seen_bad[-3:])
+                + "\n".join(f"- {s}" for s in rejected_ja[-3:])
                 + "\n请输出一个全新句子，且主语和动词都必须不同。"
             )
             continue
@@ -452,26 +455,29 @@ def _generate_one_valid_question_with_recent(
         result = _run_validators(ja, ctx)
         if result.ok:
             current_app.logger.info(
-                "question_candidate success attempt=%s total_calls=%s sentence=%s",
+                "question_candidate success attempt=%s total_calls=%s sentence=%s regen_style=%s",
                 current_attempt,
                 total_calls,
                 ja,
+                regen_style,
             )
             return data
         if result.category == "naturalness":
             current_app.logger.info(
-                "question_candidate fail attempt=%s total_calls=%s category=naturalness reason=%s sentence=%s",
+                "question_candidate fail attempt=%s total_calls=%s category=naturalness reason=%s sentence=%s regen_style=%s",
                 current_attempt,
                 total_calls,
                 result.error,
                 ja,
+                regen_style,
             )
+            rejected_ja.append(ja)
             seen_bad.append(f"{ja}（不自然：{result.error}）")
-            regen_msg = _build_retry_message(
-                _compose_generation_user_message(ctx.base_user_message, recent_generated),
-                seen_bad,
-                reason=result.error,
-                category=result.category,
+            base = _compose_generation_user_message(ctx.base_user_message, recent_generated)
+            regen_msg = (
+                _build_minimal_retry_message(base, rejected_ja)
+                if regen_style == "minimal"
+                else _build_retry_message(base, seen_bad, reason=result.error, category=result.category)
             )
             last_error = f"unnatural: {result.error}"
             continue
@@ -482,20 +488,22 @@ def _generate_one_valid_question_with_recent(
             {"attempt": current_attempt, "total_calls": total_calls, "sentence": ja, "error": result.error},
         )
         current_app.logger.info(
-            "question_candidate fail attempt=%s total_calls=%s category=%s reason=%s sentence=%s",
+            "question_candidate fail attempt=%s total_calls=%s category=%s reason=%s sentence=%s regen_style=%s",
             current_attempt,
             total_calls,
             result.category,
             result.error,
             ja,
+            regen_style,
         )
         last_error = result.error
+        rejected_ja.append(ja)
         seen_bad.append(ja)
-        regen_msg = _build_retry_message(
-            _compose_generation_user_message(ctx.base_user_message, recent_generated),
-            seen_bad,
-            reason=result.error,
-            category=result.category,
+        base = _compose_generation_user_message(ctx.base_user_message, recent_generated)
+        regen_msg = (
+            _build_minimal_retry_message(base, rejected_ja)
+            if regen_style == "minimal"
+            else _build_retry_message(base, seen_bad, reason=result.error, category=result.category)
         )
     if total_calls >= config.max_total_calls and last_error == "generator repeated a previously rejected sentence":
         raise ValueError("Generated sentence failed validation repeatedly: model kept repeating rejected outputs")
@@ -545,6 +553,20 @@ def _validate_naturalness(sentence: str, _ctx: GenerationContext) -> ValidationR
     return ValidationResult(ok=False, error=nat_reason, category="naturalness")
 
 
+def _regen_prompt_style() -> str:
+    raw = str(current_app.config.get("PRACTICE_REGEN_PROMPT") or "detailed").strip().lower()
+    return "minimal" if raw == "minimal" else "detailed"
+
+
+def _build_minimal_retry_message(base_message: str, rejected_plain: list[str]) -> str:
+    tail = rejected_plain[-5:]
+    banned = "\n".join(f"- {s}" for s in tail) if tail else ""
+    extra = "\n\n上一条未通过自动校验。请输出完全不同的新句子（主语/动词/时间至少换两项）。"
+    if banned:
+        extra += "\n禁止再次输出：\n" + banned
+    return base_message + extra
+
+
 def _build_retry_message(base_message: str, seen_bad: list[str], *, reason: str, category: str) -> str:
     if category == "naturalness":
         reason_line = f"\n不自然原因：{reason}\n" if reason else "\n"
@@ -575,6 +597,7 @@ def _is_natural_sentence(sentence: str) -> tuple[bool, str]:
         user=json.dumps({"japanese_sentence": sentence}, ensure_ascii=False),
         temperature=0.0,
         max_retries=1,
+        usage_kind="naturalness_check",
     )
     raw_ok = data.get("is_natural", False)
     if isinstance(raw_ok, bool):
@@ -606,6 +629,7 @@ def grade_answer(
         user=user_msg,
         temperature=0.1,
         max_retries=2,
+        usage_kind="grade_answer",
     )
 
 

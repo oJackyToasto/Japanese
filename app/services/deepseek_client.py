@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+import logging
 import os
 from typing import Any
 
@@ -21,12 +23,24 @@ def _client() -> OpenAI:
     )
 
 
+def _summarize_result(payload: dict[str, Any]) -> str:
+    if "japanese_sentence" in payload:
+        return str(payload.get("japanese_sentence") or "")
+    if "is_natural" in payload:
+        return f"is_natural={payload.get('is_natural')} reason={payload.get('reason') or ''}"
+    if "is_correct" in payload:
+        return f"is_correct={payload.get('is_correct')} correction={payload.get('correction') or ''}"
+    text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    return text[:200]
+
+
 def chat_json(
     *,
     system: str,
     user: str,
     temperature: float,
     max_retries: int = 2,
+    usage_kind: str = "chat_json",
 ) -> dict[str, Any]:
     """Call chat completions and parse JSON object; retry on failure."""
     model = current_app.config["DEEPSEEK_MODEL"]
@@ -44,7 +58,22 @@ def chat_json(
                 response_format={"type": "json_object"},
             )
             content = (resp.choices[0].message.content or "").strip()
-            return extract_json(content)
+            parsed = extract_json(content)
+            usage = getattr(resp, "usage", None)
+            if usage is not None:
+                pt = getattr(usage, "prompt_tokens", None)
+                ct = getattr(usage, "completion_tokens", None)
+                tt = getattr(usage, "total_tokens", None)
+                logging.getLogger("app.cost").info(
+                    "%s\t%s\t%s\t%s\t%s\t%s",
+                    usage_kind,
+                    model,
+                    pt,
+                    ct,
+                    tt,
+                    _summarize_result(parsed),
+                )
+            return parsed
         except Exception as e:  # noqa: BLE001 — surface last error after retries
             last_err = e
             continue
