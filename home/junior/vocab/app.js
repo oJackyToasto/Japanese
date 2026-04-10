@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const CLASS_IDS = ["class1", "class2", "class3", "class4", "class5", "quantity"];
+  const CLASS_IDS = ["class1", "class2", "class3", "class4", "class5", "class6", "quantity"];
   const PITCH_SYMBOLS = "⓪①②③④⑤";
   const CLASS_BASE = "../../../classes/vocabs";
 

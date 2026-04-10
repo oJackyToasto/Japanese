@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const CLASS_IDS = ["intro", "class5"];
+  const CLASS_IDS = ["intro", "class5", "class6"];
   const CLASS_BASE = "../../../classes/verbs";
 
   const classSelect = document.getElementById("class-select");

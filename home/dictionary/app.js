@@ -2,8 +2,8 @@
   "use strict";
 
   const FILES = {
-    vocabs: ["class1", "class2", "class3", "class4", "class5", "quantity"],
-    verbs: ["intro", "class5"],
+    vocabs: ["class1", "class2", "class3", "class4", "class5", "class6", "quantity"],
+    verbs: ["intro", "class5", "class6"],
   };
 
   const BASE = {
